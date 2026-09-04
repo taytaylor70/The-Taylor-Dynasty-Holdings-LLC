@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Holdings — The Ventures — THE TAYLOR DYNASTY</title>
+<meta name="description" content="Five ventures under one parent ecosystem: Oasis Marketplace, DogSphere, Taylor Made Real Estate, The Nephew's First Business™, and The Taylor Edition.">
+<!-- Social &amp; icons — update the taylordynasty.com domain once registered -->
+<meta name="author" content="L. Taylor III">
+<meta name="theme-color" content="#0b0c0c">
+<meta property="og:site_name" content="THE TAYLOR DYNASTY HOLDINGS">
+<meta property="og:title" content="Holdings — The Ventures — THE TAYLOR DYNASTY">
+<meta property="og:description" content="Five ventures under one parent ecosystem: Oasis Marketplace, DogSphere, Taylor Made Real Estate, The Nephew's First Business™, and The Taylor Edition.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://taylordynasty.com/holdings/">
+<meta property="og:image" content="https://taylordynasty.com/assets/og-brand.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Taylor Dynasty Holdings monogram">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Holdings — The Ventures — THE TAYLOR DYNASTY">
+<meta name="twitter:description" content="Five ventures under one parent ecosystem: Oasis Marketplace, DogSphere, Taylor Made Real Estate, The Nephew's First Business™, and The Taylor Edition.">
+<meta name="twitter:image" content="https://taylordynasty.com/assets/og-brand.jpg">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   THE TAYLOR DYNASTY HOLDINGS — single-file build
+   Palette: ink #0b0c0c · gold #c0a57a · cream #f2ecdb · text #e5e6ec
+   ============================================================ */
+:root{
+  --ink:#0b0c0c;
+  --ink-2:#091118;
+  --gold:#c0a57a;
+  --gold-soft:rgba(192,165,122,.5);
+  --cream:#f2ecdb;
+  --text:#e5e6ec;
+  --muted:rgba(229,230,236,.6);
+  --display:"Playfair Display","Cormorant Garamond",Didot,"Bodoni MT","Times New Roman",serif;
+  --body:"Geist","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --script:"Pacifico","Snell Roundhand","Brush Script MT",cursive;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{
+  background:var(--ink);color:var(--text);
+  font-family:var(--body);font-weight:400;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+::selection{background:var(--gold);color:var(--ink)}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button,input,select,textarea{font-family:inherit;font-size:inherit;color:inherit}
+:focus-visible{outline:1px solid var(--gold);outline-offset:3px}
+
+/* ---------- utility classes kept from the original build ---------- */
+.font-display{font-family:var(--display)}
+.text-gold-gradient{
+  background:linear-gradient(105deg,#8a7148 0%,#c0a57a 30%,#f2ecdb 50%,#c0a57a 70%,#8a7148 100%);
+  background-size:200% auto;
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+  animation:sheen 7s linear infinite;
+}
+@keyframes sheen{to{background-position:200% center}}
+.grain{position:relative}
+.grain::after{
+  content:"";position:absolute;inset:0;z-index:3;pointer-events:none;opacity:.07;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+}
+/* global film grain over everything */
+body::before{
+  content:"";position:fixed;inset:0;z-index:2000;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+}
+
+/* ---------- scroll progress (the “time” axis) ---------- */
+#progress{position:fixed;top:0;left:0;height:2px;width:0;z-index:1200;
+  background:linear-gradient(90deg,#8a7148,var(--gold),var(--cream));box-shadow:0 0 12px rgba(192,165,122,.8)}
+
+/* ---------- cursor aura ---------- */
+#aura{position:fixed;width:340px;height:340px;border-radius:50%;pointer-events:none;z-index:1;
+  background:radial-gradient(circle,rgba(192,165,122,.10) 0%,rgba(192,165,122,.04) 40%,transparent 70%);
+  transform:translate(-50%,-50%);transition:opacity .4s;opacity:0}
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;transition:all .5s var(--ease)}
+nav .nav-inner{max-width:1400px;margin:0 auto;padding:0 24px;height:80px;display:flex;align-items:center;justify-content:space-between}
+nav.scrolled{background:rgba(11,12,12,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(192,165,122,.18)}
+.brand{display:flex;align-items:center;gap:12px;cursor:pointer}
+.brand-mark{width:40px;height:48px;display:flex;align-items:center;justify-content:center;
+  border:2px solid var(--gold);border-radius:0 0 12px 12px;position:relative;
+  transition:transform .6s var(--ease);transform-style:preserve-3d}
+.brand:hover .brand-mark{transform:rotateX(18deg) rotateY(-14deg)}
+.brand-mark span{font-family:var(--display);font-size:24px;line-height:1;color:var(--gold)}
+.brand-name{display:block;line-height:1.15}
+.brand-line1{font-family:var(--display);font-size:18px;color:var(--gold);letter-spacing:.18em}
+.brand-line2{font-size:10px;letter-spacing:.35em;color:var(--muted)}
+.nav-links{display:flex;align-items:center;gap:40px;font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:rgba(229,230,236,.7)}
+.nav-links a{position:relative;padding:6px 0;transition:color .3s}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--gold);transition:width .4s var(--ease)}
+.nav-links a:hover{color:var(--gold)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;font-size:12px;letter-spacing:.25em;text-transform:uppercase;
+  border:1px solid var(--gold-soft);color:var(--gold);transition:all .35s}
+.nav-cta:hover{background:var(--gold);color:var(--ink)}
+.nav-cta svg{transition:transform .35s}
+.nav-cta:hover svg{transform:translate(2px,-2px)}
+#menuBtn{display:none;background:none;border:1px solid var(--gold-soft);color:var(--gold);width:44px;height:44px;cursor:pointer;align-items:center;justify-content:center}
+
+/* mobile menu */
+#mobileMenu{position:fixed;inset:0;z-index:1100;background:rgba(9,17,24,.97);backdrop-filter:blur(18px);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px;
+  opacity:0;pointer-events:none;transition:opacity .4s}
+#mobileMenu.open{opacity:1;pointer-events:auto}
+#mobileMenu a{font-family:var(--display);font-size:30px;color:var(--text);letter-spacing:.14em}
+#mobileMenu a:hover{color:var(--gold)}
+#mobileMenu .mm-phone{font-size:14px;letter-spacing:.3em;color:var(--gold)}
+#menuClose{position:absolute;top:24px;right:24px;background:none;border:1px solid var(--gold-soft);color:var(--gold);width:44px;height:44px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{position:relative;min-height:100vh;height:100vh;overflow:hidden;perspective:1100px}
+.hero-media{position:absolute;inset:-4%;z-index:0}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:center top;
+  transform:scale(1.06);animation:kenburns 26s ease-in-out infinite alternate;
+  transition:transform .2s linear}
+@keyframes kenburns{from{transform:scale(1.06) translateY(0)}to{transform:scale(1.16) translateY(-2%)}}
+.hero-veil{position:absolute;inset:0;z-index:1;
+  background:linear-gradient(to bottom,rgba(11,12,12,.70) 0%,rgba(11,12,12,.40) 45%,#0b0c0c 100%)}
+#dust{position:absolute;inset:0;z-index:2;pointer-events:none}
+.hero-ring{position:absolute;z-index:2;top:50%;left:50%;width:min(72vmin,760px);height:min(72vmin,760px);
+  border:1px solid rgba(192,165,122,.22);border-radius:50%;
+  transform:translate(-50%,-50%) rotateX(72deg);animation:ringSpin 24s linear infinite;pointer-events:none}
+.hero-ring::before{content:"";position:absolute;inset:7%;border:1px dashed rgba(192,165,122,.28);border-radius:50%}
+.hero-ring::after{content:"";position:absolute;inset:16%;border:1px solid rgba(192,165,122,.15);border-radius:50%}
+@keyframes ringSpin{to{transform:translate(-50%,-50%) rotateX(72deg) rotate(360deg)}}
+.hero-content{position:relative;z-index:4;min-height:100vh;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:0 24px;transform-style:preserve-3d;
+  transform:rotateX(calc(var(--my,0)*-3deg)) rotateY(calc(var(--mx,0)*3deg));transition:transform .25s ease-out}
+.hero-content>*{transform:translateZ(0)}
+.hero-est{font-size:11px;letter-spacing:.5em;color:var(--muted);text-transform:uppercase;margin-bottom:26px;
+  opacity:0;animation:riseIn 1.2s var(--ease) .3s forwards}
+.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(42px,8vw,108px);line-height:1.05;
+  transform:translateZ(60px);opacity:0;animation:riseIn 1.4s var(--ease) .5s forwards}
+.hero h1 .l1{display:block;color:var(--cream);text-shadow:0 10px 40px rgba(0,0,0,.6)}
+.hero h1 .l2{display:block;font-style:italic;letter-spacing:.06em}
+.hero-tag{margin-top:32px;font-size:clamp(12px,1.4vw,18px);letter-spacing:.15em;text-transform:uppercase;color:var(--muted);
+  transform:translateZ(40px);opacity:0;animation:riseIn 1.2s var(--ease) .9s forwards}
+.hero-cta{margin-top:48px;transform:translateZ(50px);opacity:0;animation:riseIn 1.2s var(--ease) 1.15s forwards}
+.btn-gold{display:inline-flex;align-items:center;gap:12px;padding:18px 34px;background:var(--gold);color:var(--ink);
+  font-size:12px;letter-spacing:.3em;text-transform:uppercase;border:1px solid var(--gold);cursor:pointer;
+  transition:all .35s;position:relative;overflow:hidden}
+.btn-gold::after{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);transition:left .6s}
+.btn-gold:hover::after{left:130%}
+.btn-gold:hover{box-shadow:0 18px 50px rgba(192,165,122,.35);transform:translateY(-2px)}
+@keyframes riseIn{from{opacity:0;transform:translateY(38px) translateZ(var(--tz,40px))}to{opacity:1;transform:translateY(0) translateZ(var(--tz,40px))}}
+.hero-stats{position:absolute;left:0;right:0;bottom:0;z-index:5;border-top:1px solid rgba(192,165,122,.16);
+  background:linear-gradient(to top,rgba(11,12,12,.9),rgba(11,12,12,.3));
+  display:grid;grid-template-columns:repeat(4,1fr);backdrop-filter:blur(6px)}
+.hstat{padding:22px 12px;text-align:center;border-right:1px solid rgba(192,165,122,.12)}
+.hstat:last-child{border-right:none}
+.hstat b{display:block;font-family:var(--display);font-weight:500;font-size:clamp(20px,2.6vw,32px);color:var(--gold)}
+.hstat span{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.scroll-hint{position:absolute;bottom:110px;left:50%;transform:translateX(-50%);z-index:5;
+  display:flex;flex-direction:column;align-items:center;gap:10px;color:var(--muted);font-size:9px;letter-spacing:.4em;text-transform:uppercase}
+.mouse{width:22px;height:36px;border:1px solid var(--gold-soft);border-radius:12px;position:relative}
+.mouse::after{content:"";position:absolute;top:6px;left:50%;width:3px;height:7px;margin-left:-1.5px;border-radius:3px;background:var(--gold);animation:wheel 1.8s infinite}
+@keyframes wheel{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(14px)}}
+
+/* ============================================================
+   SECTIONS — shared
+   ============================================================ */
+.sec{position:relative;padding:120px 24px;max-width:1400px;margin:0 auto}
+.kicker{display:inline-flex;align-items:center;gap:14px;font-size:11px;letter-spacing:.45em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.kicker::before{content:"";width:44px;height:1px;background:var(--gold)}
+.sec-title{font-family:var(--display);font-weight:400;font-size:clamp(32px,4.6vw,58px);line-height:1.1;color:var(--cream)}
+.sec-title em{font-style:italic;color:var(--gold)}
+.sec-sub{margin-top:18px;max-width:620px;color:var(--muted);line-height:1.8;font-size:15px}
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}
+
+/* reveal-on-scroll */
+.js [data-reveal]{opacity:0;transform:translateY(46px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.js [data-reveal="left"]{transform:translateX(-60px) rotateY(6deg)}
+.js [data-reveal="right"]{transform:translateX(60px) rotateY(-6deg)}
+.js [data-reveal="zoom"]{transform:scale(.86)}
+.js [data-reveal].in{opacity:1;transform:none}
+
+/* ============================================================
+   DIVISIONS — 3D tilt cards
+   ============================================================ */
+#divisions{padding-top:40px}
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:70px;perspective:1400px}
+.tilt{position:relative;transform-style:preserve-3d;transition:transform .5s var(--ease),box-shadow .5s;background:
+  linear-gradient(160deg,rgba(192,165,122,.07),rgba(192,165,122,.015) 55%),#0e1116;
+  border:1px solid rgba(192,165,122,.16);padding:44px 36px 38px;min-height:430px;display:flex;flex-direction:column;
+  overflow:hidden;will-change:transform}
+.tilt .glare{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .4s;
+  background:radial-gradient(420px circle at var(--gx,50%) var(--gy,50%),rgba(242,236,219,.14),transparent 60%)}
+.tilt:hover .glare{opacity:1}
+.tilt:hover{box-shadow:0 30px 70px rgba(0,0,0,.55),0 0 0 1px rgba(192,165,122,.3)}
+.tilt .num{position:absolute;top:18px;right:22px;font-family:var(--display);font-size:60px;color:rgba(192,165,122,.12);
+  transform:translateZ(30px)}
+.tilt .ico{width:64px;height:64px;display:flex;align-items:center;justify-content:center;color:var(--gold);
+  border:1px solid var(--gold-soft);transform:translateZ(46px);margin-bottom:26px;
+  background:radial-gradient(circle at 30% 30%,rgba(192,165,122,.16),transparent 70%)}
+.tilt h3{font-family:var(--display);font-weight:500;font-size:26px;color:var(--cream);transform:translateZ(36px)}
+.tilt .role{font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin:10px 0 18px;transform:translateZ(36px)}
+.tilt p{color:var(--muted);line-height:1.85;font-size:14px;transform:translateZ(24px);flex:1}
+.tilt .go{margin-top:26px;display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--gold);transform:translateZ(36px);transition:gap .3s}
+.tilt .go:hover{gap:16px}
+.tilt::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity .4s}
+.tilt:hover::before{opacity:1}
+
+/* ============================================================
+   HOLDINGS
+   ============================================================ */
+#holdings{position:relative}
+.hold-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:70px;perspective:1500px}
+.hold{position:relative;min-height:300px;padding:34px 30px;display:flex;flex-direction:column;justify-content:flex-end;
+  border:1px solid rgba(192,165,122,.15);overflow:hidden;transform-style:preserve-3d;
+  background:
+    radial-gradient(120% 90% at 80% 0%,rgba(192,165,122,.13),transparent 55%),
+    radial-gradient(90% 70% at 10% 100%,rgba(192,165,122,.07),transparent 55%),
+    #0d1015;
+  transition:transform .5s var(--ease),border-color .4s}
+.hold:hover{border-color:rgba(192,165,122,.45)}
+.hold .bg-ico{position:absolute;top:-24px;right:-20px;color:rgba(192,165,122,.1);transform:translateZ(10px);transition:transform .6s var(--ease),color .6s}
+.hold:hover .bg-ico{transform:translateZ(60px) scale(1.08) rotate(-4deg);color:rgba(192,165,122,.22)}
+.hold .sector{font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);transform:translateZ(26px)}
+.hold h3{font-family:var(--display);font-weight:500;font-size:24px;color:var(--cream);margin:12px 0 10px;transform:translateZ(34px)}
+.hold p{font-size:13.5px;line-height:1.8;color:var(--muted);transform:translateZ(20px)}
+.hold .est{margin-top:18px;font-size:10px;letter-spacing:.3em;color:rgba(229,230,236,.45);transform:translateZ(26px)}
+.hold .shine{position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(115deg,transparent 30%,rgba(242,236,219,.09) 48%,transparent 62%);
+  transform:translateX(-120%);transition:transform .9s var(--ease)}
+.hold:hover .shine{transform:translateX(120%)}
+
+/* ============================================================
+   MARQUEE (3D skewed ribbon of time)
+   ============================================================ */
+.marquee-wrap{overflow:hidden;padding:34px 0;border-top:1px solid rgba(192,165,122,.16);border-bottom:1px solid rgba(192,165,122,.16);
+  background:#0a0e13;perspective:600px}
+.marquee{display:flex;gap:0;width:max-content;transform:rotateX(16deg);animation:mq 30s linear infinite}
+.marquee-wrap:hover .marquee{animation-play-state:paused}
+@keyframes mq{to{transform:rotateX(16deg) translateX(-50%)}}
+.mq-item{display:inline-flex;align-items:center;gap:34px;padding:0 34px;font-family:var(--display);font-size:26px;
+  letter-spacing:.24em;color:rgba(192,165,122,.75);white-space:nowrap}
+.mq-item svg{color:rgba(192,165,122,.5)}
+
+/* ============================================================
+   OASIS
+   ============================================================ */
+#oasis{overflow:hidden}
+.oasis-media{position:relative;transform-style:preserve-3d}
+.oasis-frame{position:relative;border:1px solid rgba(192,165,122,.3);padding:14px;background:#0d1015;
+  box-shadow:0 40px 90px rgba(0,0,0,.6)}
+.oasis-frame img{width:100%;height:560px;object-fit:cover;filter:saturate(.92)}
+.oasis-frame .corner{position:absolute;width:26px;height:26px;border-color:var(--gold);border-style:solid;border-width:0}
+.corner.tl{top:-1px;left:-1px;border-top-width:2px;border-left-width:2px}
+.corner.tr{top:-1px;right:-1px;border-top-width:2px;border-right-width:2px}
+.corner.bl{bottom:-1px;left:-1px;border-bottom-width:2px;border-left-width:2px}
+.corner.br{bottom:-1px;right:-1px;border-bottom-width:2px;border-right-width:2px}
+.chip{position:absolute;z-index:5;display:flex;align-items:center;gap:10px;padding:12px 18px;font-size:10px;letter-spacing:.28em;
+  text-transform:uppercase;color:var(--cream);background:rgba(11,12,12,.78);border:1px solid var(--gold-soft);backdrop-filter:blur(8px);
+  animation:bob 6s ease-in-out infinite;transform-style:preserve-3d}
+.chip svg{color:var(--gold)}
+.chip.c1{top:8%;left:-46px;animation-delay:0s}
+.chip.c2{bottom:16%;right:-40px;animation-delay:1.6s}
+.chip.c3{bottom:-18px;left:14%;animation-delay:3.2s}
+@keyframes bob{0%,100%{transform:translateY(0) rotateX(8deg)}50%{transform:translateY(-14px) rotateX(8deg)}}
+.feat-list{margin:30px 0 36px;display:flex;flex-direction:column;gap:16px}
+.feat{display:flex;align-items:center;gap:16px;font-size:14px;letter-spacing:.12em;color:var(--text)}
+.feat .fi{width:38px;height:38px;flex:none;display:flex;align-items:center;justify-content:center;color:var(--gold);
+  border:1px solid rgba(192,165,122,.35)}
+.btn-ghost{display:inline-flex;align-items:center;gap:12px;padding:16px 30px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--gold);border:1px solid var(--gold-soft);transition:all .35s}
+.btn-ghost:hover{background:var(--gold);color:var(--ink);box-shadow:0 16px 44px rgba(192,165,122,.3)}
+
+/* ============================================================
+   TECH — live 4D tesseract
+   ============================================================ */
+#tech{background:
+  radial-gradient(70% 60% at 85% 10%,rgba(192,165,122,.06),transparent 60%),
+  radial-gradient(50% 50% at 10% 90%,rgba(192,165,122,.05),transparent 60%)}
+.tess-panel{position:relative;border:1px solid rgba(192,165,122,.28);background:linear-gradient(165deg,#0c0f14,#090c10);
+  box-shadow:0 40px 100px rgba(0,0,0,.6),inset 0 0 80px rgba(192,165,122,.03)}
+.tess-head{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid rgba(192,165,122,.18);
+  font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--muted)}
+.tess-head .live{display:inline-flex;align-items:center;gap:8px;color:var(--gold)}
+.tess-head .live i{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold);animation:blink 1.6s infinite}
+@keyframes blink{50%{opacity:.25}}
+#tesseract{display:block;width:100%;height:460px;cursor:grab;touch-action:none}
+#tesseract:active{cursor:grabbing}
+.tess-foot{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border-top:1px solid rgba(192,165,122,.18)}
+.tess-slider{padding:16px 18px;border-right:1px solid rgba(192,165,122,.12)}
+.tess-slider:last-child{border-right:none}
+.tess-slider label{display:flex;justify-content:space-between;font-size:9px;letter-spacing:.3em;color:var(--muted);margin-bottom:10px;text-transform:uppercase}
+.tess-slider label b{color:var(--gold);font-weight:500}
+input[type=range]{width:100%;-webkit-appearance:none;appearance:none;height:2px;background:rgba(192,165,122,.3);outline:none;cursor:pointer}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:var(--gold);
+  box-shadow:0 0 12px rgba(192,165,122,.8);cursor:grab}
+input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--gold);border:none}
+.tess-read{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.read-pill{font-size:10px;letter-spacing:.22em;padding:8px 14px;border:1px solid rgba(192,165,122,.25);color:var(--muted);
+  font-variant-numeric:tabular-nums}
+.read-pill b{color:var(--gold);font-weight:500}
+.tess-hint{margin-top:14px;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:rgba(229,230,236,.4)}
+
+/* ============================================================
+   FOUNDER
+   ============================================================ */
+.founder-media{position:relative;transform-style:preserve-3d}
+.founder-frame{position:relative;padding:14px;border:1px solid rgba(192,165,122,.3);background:#0d1015;box-shadow:0 40px 90px rgba(0,0,0,.6)}
+.founder-frame img{width:100%;height:620px;object-fit:cover;object-position:center top;filter:saturate(.9)}
+.founder-frame .plate{position:absolute;left:14px;right:14px;bottom:14px;padding:16px 20px;
+  background:rgba(11,12,12,.82);backdrop-filter:blur(10px);border-top:1px solid rgba(192,165,122,.3);
+  display:flex;justify-content:space-between;align-items:center;transform:translateZ(30px)}
+.founder-frame .plate b{font-family:var(--display);font-weight:500;color:var(--cream);letter-spacing:.08em}
+.founder-frame .plate span{font-size:9px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase}
+.quote{position:relative;margin:34px 0;padding:28px 30px;border-left:2px solid var(--gold);
+  background:linear-gradient(90deg,rgba(192,165,122,.07),transparent)}
+.quote p{font-family:var(--display);font-style:italic;font-size:clamp(18px,2vw,23px);line-height:1.6;color:var(--cream)}
+.quote::before{content:"“";position:absolute;top:-30px;left:14px;font-family:var(--display);font-size:90px;color:rgba(192,165,122,.35)}
+.sig{font-family:var(--script);font-size:34px;color:var(--gold);margin-top:6px}
+.timeline{margin-top:44px;position:relative;padding-left:26px}
+.timeline::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:1px;
+  background:linear-gradient(to bottom,transparent,var(--gold),transparent)}
+.tl-item{position:relative;padding:0 0 26px 18px}
+.tl-item::before{content:"";position:absolute;left:-26px;top:6px;width:11px;height:11px;border-radius:50%;
+  border:1px solid var(--gold);background:var(--ink);box-shadow:0 0 12px rgba(192,165,122,.6);transition:all .4s}
+.tl-item:hover::before{background:var(--gold);transform:scale(1.35)}
+.tl-item b{font-family:var(--display);font-weight:500;font-size:20px;color:var(--gold);margin-right:14px}
+.tl-item span{color:var(--muted);font-size:13.5px;letter-spacing:.05em}
+
+/* ============================================================
+   IDENTITY — 4D monogram cube
+   ============================================================ */
+#identity .split{align-items:center}
+.cube-stage{display:flex;align-items:center;justify-content:center;min-height:460px;perspective:1000px}
+.cube{position:relative;width:220px;height:220px;transform-style:preserve-3d;animation:cubeSpin 18s linear infinite;cursor:pointer}
+.cube:hover{animation-duration:7s}
+@keyframes cubeSpin{from{transform:rotateX(-18deg) rotateY(0)}to{transform:rotateX(-18deg) rotateY(360deg)}}
+.cube .face{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+  border:1px solid rgba(192,165,122,.65);
+  background:linear-gradient(160deg,rgba(192,165,122,.14),rgba(192,165,122,.03));
+  backdrop-filter:blur(2px);box-shadow:inset 0 0 40px rgba(192,165,122,.12)}
+.cube .face b{font-family:var(--display);font-weight:500;font-size:96px;color:var(--gold);text-shadow:0 0 30px rgba(192,165,122,.55)}
+.cube .face span{font-size:9px;letter-spacing:.5em;color:var(--muted);text-transform:uppercase}
+.cube .f1{transform:translateZ(110px)}
+.cube .f2{transform:rotateY(180deg) translateZ(110px)}
+.cube .f3{transform:rotateY(90deg) translateZ(110px)}
+.cube .f4{transform:rotateY(-90deg) translateZ(110px)}
+.cube .f5{transform:rotateX(90deg) translateZ(110px)}
+.cube .f6{transform:rotateX(-90deg) translateZ(110px)}
+.cube-shadow{width:220px;height:36px;margin:150px auto 0;border-radius:50%;
+  background:radial-gradient(ellipse,rgba(192,165,122,.22),transparent 70%);filter:blur(6px)}
+.values{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:38px}
+.value{padding:22px;border:1px solid rgba(192,165,122,.16);background:#0d1015;transition:all .4s;transform-style:preserve-3d}
+.value:hover{border-color:rgba(192,165,122,.45);transform:translateZ(24px) rotateX(3deg)}
+.value .vi{color:var(--gold);margin-bottom:12px}
+.value b{display:block;font-family:var(--display);font-weight:500;font-size:19px;color:var(--cream);letter-spacing:.06em}
+.value span{font-size:12.5px;color:var(--muted);line-height:1.7;display:block;margin-top:6px}
+.palette{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+.swatch{flex:1;min-width:110px}
+.swatch i{display:block;height:56px;border:1px solid rgba(229,230,236,.12)}
+.swatch em{display:block;font-style:normal;font-size:9.5px;letter-spacing:.22em;color:var(--muted);margin-top:8px;text-transform:uppercase}
+
+/* ============================================================
+   CONTACT — Private Access
+   ============================================================ */
+#contact{max-width:1200px}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;margin-top:70px;perspective:1200px}
+.c-info{display:flex;flex-direction:column;gap:14px}
+.c-row{display:flex;align-items:center;gap:20px;padding:24px;border:1px solid rgba(192,165,122,.16);background:#0d1015;
+  transition:all .4s;transform-style:preserve-3d}
+.c-row:hover{border-color:rgba(192,165,122,.45);transform:translateZ(26px) rotateY(-2deg)}
+.c-row .ci{width:52px;height:52px;flex:none;display:flex;align-items:center;justify-content:center;color:var(--gold);
+  border:1px solid var(--gold-soft)}
+.c-row small{display:block;font-size:9.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.c-row b{font-family:var(--display);font-weight:500;font-size:21px;color:var(--cream);letter-spacing:.04em;transition:color .3s}
+a.c-row:hover b{color:var(--gold)}
+.form-card{position:relative;padding:44px;border:1px solid rgba(192,165,122,.24);background:linear-gradient(165deg,#0d1015,#0a0d12);
+  box-shadow:0 40px 90px rgba(0,0,0,.5);transform-style:preserve-3d}
+.form-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{display:flex;flex-direction:column;gap:9px;margin-bottom:18px}
+.field label{font-size:9.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+.field input,.field select,.field textarea{background:rgba(229,230,236,.03);border:1px solid rgba(192,165,122,.22);
+  padding:15px 16px;color:var(--text);letter-spacing:.04em;transition:all .3s;font-size:14px}
+.field select option{background:#0d1015}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold);
+  box-shadow:0 0 0 3px rgba(192,165,122,.12);background:rgba(192,165,122,.05)}
+.field textarea{resize:vertical;min-height:120px}
+#formOk{display:none;margin-top:18px;padding:16px;border:1px solid rgba(192,165,122,.4);
+  color:var(--gold);font-size:12px;letter-spacing:.18em;text-transform:uppercase;text-align:center;
+  background:rgba(192,165,122,.06)}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer{position:relative;border-top:1px solid var(--gold);background:#091118;padding:64px 24px 40px}
+.foot-grid{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:50px}
+.foot-brand{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.foot-tag{color:var(--muted);font-size:12.5px;letter-spacing:.14em;line-height:2;max-width:340px}
+.foot-col h4{font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.foot-col a,.foot-col span{display:block;color:var(--muted);font-size:13px;letter-spacing:.1em;padding:7px 0;transition:color .3s}
+.foot-col a:hover{color:var(--gold)}
+.foot-bottom{max-width:1400px;margin:50px auto 0;padding-top:26px;border-top:1px solid rgba(192,165,122,.14);
+  display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;
+  font-size:11px;letter-spacing:.2em;color:rgba(229,230,236,.4);text-transform:uppercase}
+.socials{display:flex;gap:12px}
+.socials a{width:38px;height:38px;display:flex;align-items:center;justify-content:center;color:var(--muted);
+  border:1px solid rgba(192,165,122,.25);transition:all .3s}
+.socials a:hover{color:var(--ink);background:var(--gold);transform:translateY(-3px)}
+
+/* back to top */
+#toTop{position:fixed;right:26px;bottom:26px;z-index:900;width:48px;height:48px;display:flex;align-items:center;justify-content:center;
+  background:rgba(11,12,12,.8);border:1px solid var(--gold-soft);color:var(--gold);cursor:pointer;
+  opacity:0;pointer-events:none;transition:all .4s;backdrop-filter:blur(8px)}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{background:var(--gold);color:var(--ink)}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width:1080px){
+  .cards3,.hold-grid{grid-template-columns:1fr 1fr}
+  .split{grid-template-columns:1fr;gap:56px}
+  .cube-stage{min-height:380px}
+}
+@media (max-width:860px){
+  .nav-links,.nav-cta{display:none}
+  #menuBtn{display:flex}
+  .hero-stats{grid-template-columns:1fr 1fr}
+  .hstat:nth-child(2){border-right:none}
+  .hstat:nth-child(1),.hstat:nth-child(2){border-bottom:1px solid rgba(192,165,122,.12)}
+  .scroll-hint{display:none}
+  .contact-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .chip.c1{left:10px}.chip.c2{right:10px}
+}
+@media (max-width:640px){
+  .cards3,.hold-grid{grid-template-columns:1fr}
+  .f-row{grid-template-columns:1fr}
+  .sec{padding:90px 18px}
+  .form-card{padding:30px 22px}
+  .oasis-frame img{height:420px}
+  .founder-frame img{height:480px}
+  .tess-foot{grid-template-columns:1fr}
+  .tess-slider{border-right:none;border-bottom:1px solid rgba(192,165,122,.12)}
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+  .js [data-reveal]{opacity:1;transform:none}
+}
+</style>
+<style>
+
+/* ---------- shared page scaffolding ---------- */
+.page-hero{max-width:1400px;margin:0 auto;padding:150px 24px 30px;display:grid;grid-template-columns:1.08fr .92fr;gap:64px;align-items:center}
+.prose{max-width:720px;color:var(--muted);line-height:2.05;font-size:15.5px}
+.prose p+p{margin-top:24px}
+.prose strong{color:var(--cream);font-weight:500}
+.cta-band{position:relative;max-width:1400px;margin:110px auto 0;padding:100px 24px;text-align:center;border-top:1px solid rgba(192,165,122,.25);border-bottom:1px solid rgba(192,165,122,.25);background:radial-gradient(60% 110% at 50% 0%,rgba(192,165,122,.08),transparent 70%)}
+.cta-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:40px}
+.mini .tilt{min-height:0}
+.nav-links a.active{color:var(--gold)}
+.nav-links a.active::after{width:100%}
+@media(max-width:1000px){.page-hero{grid-template-columns:1fr;gap:48px;padding-top:130px}}
+
+/* ---------- ecosystem map ---------- */
+.eco{max-width:1150px;margin:64px auto 0}
+.eco-parent{display:flex;flex-direction:column;align-items:center;gap:8px;width:300px;margin:0 auto;padding:24px 26px;border:1px solid var(--gold);background:linear-gradient(160deg,rgba(192,165,122,.14),rgba(192,165,122,.03));box-shadow:0 20px 60px rgba(0,0,0,.45);transition:transform .5s var(--ease)}
+.eco-parent:hover{transform:translateY(-4px)}
+.eco-parent .pm{width:44px;height:52px;display:flex;align-items:center;justify-content:center;border:2px solid var(--gold);border-radius:0 0 12px 12px}
+.eco-parent .pm span{font-family:var(--display);font-size:26px;color:var(--gold)}
+.eco-parent b{font-family:var(--display);font-weight:500;font-size:19px;color:var(--cream);letter-spacing:.08em;text-align:center}
+.eco-parent small{font-size:9px;letter-spacing:.38em;color:var(--gold);text-transform:uppercase}
+.eco-stem{width:1px;height:36px;margin:0 auto;background:linear-gradient(to bottom,var(--gold),rgba(192,165,122,.35))}
+.eco-rail{height:1px;margin:0 10%;background:linear-gradient(90deg,transparent,rgba(192,165,122,.55) 12%,rgba(192,165,122,.55) 88%,transparent)}
+.eco-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.eco-cell{display:flex;flex-direction:column;align-items:center}
+.eco-drop{width:1px;height:34px;background:rgba(192,165,122,.35)}
+.eco-node{width:100%;text-align:center;padding:18px 8px;border:1px solid rgba(192,165,122,.3);background:#0d1015;transition:all .4s}
+.eco-node b{display:block;font-family:var(--display);font-weight:500;font-size:15px;color:var(--cream);line-height:1.35}
+.eco-node small{display:block;margin-top:8px;font-size:8.5px;letter-spacing:.28em;color:var(--gold);text-transform:uppercase}
+.eco-node:hover{border-color:var(--gold);transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,0,0,.5);background:#10141b}
+@media(max-width:900px){.eco-rail,.eco-drop{display:none}.eco-grid{grid-template-columns:1fr;gap:12px;max-width:420px;margin:28px auto 0}}
+/* ---------- document stack ---------- */
+.docstack{display:flex;flex-direction:column;gap:10px;perspective:900px}
+.doc{display:flex;align-items:center;gap:16px;padding:17px 20px;border:1px solid rgba(192,165,122,.22);background:#0d1015;transition:all .45s var(--ease)}
+.doc svg{color:var(--gold);flex:none}
+.doc b{display:block;font-size:13.5px;color:var(--cream);letter-spacing:.06em;font-weight:500}
+.doc span{display:block;font-size:11.5px;color:var(--muted);margin-top:3px;letter-spacing:.04em;line-height:1.6}
+.doc:hover{transform:translateZ(30px) rotateX(3deg);border-color:rgba(192,165,122,.5);box-shadow:0 18px 44px rgba(0,0,0,.5)}
+
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+<div id="aura"></div>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand" aria-label="The Taylor Dynasty — Home">
+      <div class="brand-mark"><span>T</span></div>
+      <div class="brand-name">
+        <div class="brand-line1 font-display">THE TAYLOR DYNASTY</div>
+        <div class="brand-line2">HOLDINGS</div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="holdings.html" class="active">Holdings</a>
+      <a href="tech.html">Tech</a>
+      <a href="about.html">About</a>
+      </div>
+    <a href="contact.html" class="nav-cta">
+      <span>Private Access</span>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+    </a>
+    <button id="menuBtn" aria-label="Open menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h12"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div id="mobileMenu">
+  <button id="menuClose" aria-label="Close menu">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+  </button>
+  <a href="holdings.html">Holdings</a>
+  <a href="tech.html">Tech</a>
+  <a href="about.html">About</a>
+  <a href="contact.html" style="color:var(--gold)">Private Access</a>
+  <div class="mm-phone">CELL — (202) 276-0500</div>
+</div>
+
+<!-- ================= PAGE HERO ================= -->
+<header class="page-hero">
+  <div data-reveal>
+    <span class="kicker">The Portfolio · Holdings</span>
+    <h1 class="sec-title" style="font-size:clamp(38px,5.2vw,66px)">Five ventures. <em>One name on every door.</em></h1>
+    <div class="prose" style="margin-top:28px">
+      <p>The Taylor Dynasty isn't a company with subsidiaries — it's a parent ecosystem with heirs. Five ventures live under the name today, from a marketplace to a trademarked first business for the next generation. Some trade already; one is waiting on its young founder to grow into it. All of them are built the same way: in-house, on real paper, to one standard.</p>
+    </div>
+    <div class="cta-actions" style="justify-content:flex-start;margin-top:36px">
+      <a class="btn-gold" href="tel:+12022760500">Request the Private Deck · (202) 276-0500 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg></a>
+      <a class="btn-ghost" href="#map">See the Dynasty Map</a>
+    </div>
+  </div>
+  <div data-reveal="right">
+    <div class="facts" style="grid-template-columns:1fr 1fr;margin-top:0">
+      <div class="fact"><small>Ventures</small><b>Five — and counting</b></div>
+      <div class="fact"><small>Parent</small><b>The Taylor Dynasty Holdings LLC</b></div>
+      <div class="fact"><small>IP Position</small><b>Trust-owned trademarks · USPTO-tracked</b></div>
+      <div class="fact"><small>Capitalization</small><b>100% founder-owned · zero outside investors</b></div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= DYNASTY MAP ================= -->
+<section class="sec" id="map" style="padding-top:80px">
+  <div data-reveal style="text-align:center">
+    <span class="kicker" style="justify-content:center">The Dynasty Map</span>
+    <h2 class="sec-title">One parent. <em>Five heirs.</em></h2>
+  </div>
+  <div class="eco" data-reveal="zoom">
+    <div class="eco-parent"><div class="pm"><span>T</span></div><b>THE TAYLOR DYNASTY</b><small>Parent Ecosystem</small></div>
+    <div class="eco-stem"></div>
+    <div class="eco-rail"></div>
+    <div class="eco-grid"><div class="eco-cell"><div class="eco-drop"></div><a class="eco-node" href="#v-oasis"><b>Oasis<br>Marketplace</b><small>Commerce</small></a></div><div class="eco-cell"><div class="eco-drop"></div><a class="eco-node" href="#v-dogsphere"><b>DogSphere</b><small>Pet Ecosystem</small></a></div><div class="eco-cell"><div class="eco-drop"></div><a class="eco-node" href="#v-taylor-made"><b>Taylor Made<br>Real Estate</b><small>Property</small></a></div><div class="eco-cell"><div class="eco-drop"></div><a class="eco-node" href="#v-nephew"><b>The Nephew's<br>First Business™</b><small>Legacy</small></a></div><div class="eco-cell"><div class="eco-drop"></div><a class="eco-node" href="#v-edition"><b>The Taylor<br>Edition</b><small>AI · Software</small></a></div></div>
+  </div>
+</section>
+
+<!-- ================= THE VENTURES ================= -->
+<section class="sec" id="ventures" style="padding-top:80px">
+  <div data-reveal>
+    <span class="kicker">The Ventures</span>
+    <h2 class="sec-title">What the house <em>holds.</em></h2>
+    <p class="sec-sub">Each venture carries the family name and the family standard. Jump to any venture from the map above — or read straight through below.</p>
+  </div>
+  <div class="hold-grid">
+    <div class="hold" id="v-oasis" data-tilt data-reveal data-delay="0">
+      <span class="shine"></span>
+      <span class="bg-ico"><svg width="150" height="150" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M6 7h12l1.5 13.5a1 1 0 0 1-1 1h-13a1 1 0 0 1-1-1L6 7z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg></span>
+      <div class="sector">Commerce</div><h3>Oasis Marketplace</h3>
+      <p>The marketplace where the ecosystem meets the market — the house's digital products and a shortlist of curated goods, sold under one standard.</p>
+      <div class="est">EST. MMXXV · BUILDING</div>
+    </div>
+    <div class="hold" id="v-dogsphere" data-tilt data-reveal data-delay="80">
+      <span class="shine"></span>
+      <span class="bg-ico"><svg width="150" height="150" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="7" cy="8" r="1.6"/><circle cx="12" cy="6.4" r="1.6"/><circle cx="17" cy="8" r="1.6"/><path d="M12 11c-2.8 0-5 2.2-5 4.6 0 1.6 1.2 2.6 2.6 2.6 1 0 1.6-.4 2.4-.4s1.4.4 2.4.4c1.4 0 2.6-1 2.6-2.6 0-2.4-2.2-4.6-5-4.6z"/></svg></span>
+      <div class="sector">Pet Ecosystem</div><h3>DogSphere</h3>
+      <p>Everything dogs, in one sphere — products, community, and care for the people who take the 6 a.m. walk. Built with the same discipline as everything else under the name.</p>
+      <div class="est">EST. MMXXV · BUILDING</div>
+    </div>
+    <div class="hold" id="v-taylor-made" data-tilt data-reveal data-delay="160">
+      <span class="shine"></span>
+      <span class="bg-ico"><svg width="150" height="150" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg></span>
+      <div class="sector">Property</div><h3>Taylor Made Real Estate</h3>
+      <p>The family trade, formalized. Taylor Made General Contractor ran job sites from 1995 to 2015 — the name inherits two decades of building standard and points it at property.</p>
+      <div class="est">EST. MMXXV · BUILDING</div>
+    </div>
+    <div class="hold" id="v-nephew" data-tilt data-reveal data-delay="0">
+      <span class="shine"></span>
+      <span class="bg-ico"><svg width="150" height="150" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M3 18h18l-1.5-9-4.5 4-3-7-3 7-4.5-4z"/><path d="M5 22h14"/></svg></span>
+      <div class="sector">Legacy</div><h3>The Nephew's First Business™</h3>
+      <p>Labeled exactly as promised: the nephew's first business. A trademarked venture built hand-in-hand with the next generation — the dynasty's first inheritance, live.</p>
+      <div class="est">™ FILED · BUILDING</div>
+    </div>
+    <div class="hold" id="v-edition" data-tilt data-reveal data-delay="80">
+      <span class="shine"></span>
+      <span class="bg-ico"><svg width="150" height="150" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="6" y="6" width="12" height="12" rx="1.5"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/><circle cx="12" cy="12" r="2"/></svg></span>
+      <div class="sector">AI · Software</div><h3>The Taylor Edition</h3>
+      <p>The flagship: the house's AI platform — built in-house, in public. Proof that the technology division ships, not just plans.</p>
+      <div class="est">IN DEVELOPMENT</div>
+    </div>
+    <div class="hold" id="v-house" data-tilt data-reveal data-delay="160">
+      <span class="shine"></span>
+      <span class="bg-ico"><svg width="150" height="150" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M4 21h16M5 21V10M19 21V10M9 21v-7M15 21v-7M3 10l9-6 9 6z"/></svg></span>
+      <div class="sector">The Parent</div><h3>The Taylor Dynasty Holdings LLC</h3>
+      <p>The paper most empires skip: operating agreement, trust structure, trademark &amp; IP portfolio. The house above the ventures.</p>
+      <div class="est">ON PAPER · 100% FOUNDER-OWNED</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BUILT ON PAPER ================= -->
+<section class="sec split" id="paper">
+  <div data-reveal="left">
+    <span class="kicker">The Legal Spine</span>
+    <h2 class="sec-title">Drawn on paper that <em>holds up in court.</em></h2>
+    <div class="prose" style="margin-top:24px">
+      <p>Most empires are drawn on napkins. This one filed first: the <strong>Operating Agreement came before the logo</strong> — trust ownership, management authority, capital contributions, distributions, banking authority, and successor continuity, down to dissolution and Schedule A.</p>
+      <p>Then the <strong>Trademark &amp; IP Portfolio System</strong>: trust-owned marks, an IP hierarchy, a portfolio ledger, a brand-asset inventory, a USPTO filing tracker, and domain &amp; copyright registries. The name is protected everywhere it lives — before it's famous, not after.</p>
+    </div>
+    <a href="about.html" class="btn-ghost" style="margin-top:32px;display:inline-flex">Meet the Founder <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+  <div class="docstack" data-reveal="right">
+      <div class="doc" data-reveal data-delay="0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg><div><b>Operating Agreement</b><span>Trust ownership · management authority · capital &amp; distributions · banking authority · successor continuity · dissolution · Schedule A</span></div></div>
+      <div class="doc" data-reveal data-delay="60"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg><div><b>Trust Structure</b><span>House assets held in trust — continuity beyond any one generation.</span></div></div>
+      <div class="doc" data-reveal data-delay="120"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg><div><b>Trademark &amp; IP Portfolio System</b><span>Trust-owned marks, IP hierarchy, portfolio ledger, brand-asset inventory.</span></div></div>
+      <div class="doc" data-reveal data-delay="180"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg><div><b>USPTO Filing Tracker</b><span>Every mark tracked from application to registration.</span></div></div>
+      <div class="doc" data-reveal data-delay="240"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg><div><b>Domain &amp; Copyright Registries</b><span>The name protected everywhere it lives.</span></div></div>
+      <div class="doc" data-reveal data-delay="300"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg><div><b>Recordkeeping Protocol</b><span>Even the exit is documented. Hopefully never used.</span></div></div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<div class="cta-band" data-reveal>
+  <span class="kicker" style="justify-content:center">Private Access</span>
+  <h2 class="sec-title">Ask for <em>the deck.</em></h2>
+  <p class="sec-sub" style="margin:20px auto 0">One call, one founder, one honest conversation about fit. If the house can't help, you'll hear it in the first five minutes.</p>
+  <div class="cta-actions">
+    <a class="btn-gold" href="tel:+12022760500">(202) 276-0500 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg></a>
+    <a class="btn-ghost" href="mailto:Taytaylor70@gmail.com">Taytaylor70@gmail.com</a>
+  </div>
+</div>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand">
+        <div class="brand-mark"><span>T</span></div>
+        <div class="brand-name">
+          <div class="brand-line1 font-display">THE TAYLOR DYNASTY</div>
+          <div class="brand-line2">HOLDINGS</div>
+        </div>
+      </div>
+      <p class="foot-tag">Building Legacy. Creating Value. Engineering the Future.</p>
+    </div>
+    <div class="foot-col">
+      <h4>The Empire</h4>
+      <a href="index.html">Home</a>
+      <a href="holdings.html">The Ventures — Holdings</a>
+      <a href="tech.html">The Craft — Tech</a>
+      <a href="about.html">The Founder — About</a>
+      <a href="contact.html">Private Access — Contact</a>
+    </div>
+    <div class="foot-col">
+      <h4>Private Access</h4>
+      <a href="tel:+12022760500">Cell — (202) 276-0500</a>
+      <a href="mailto:Taytaylor70@gmail.com">Taytaylor70@gmail.com</a>
+      <span>Columbus, Ohio · Eastern Time</span>
+      <span>By appointment only</span>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© <span id="year">2026</span> The Taylor Dynasty Holdings LLC. All rights reserved.</span>
+    <span>Built to be inherited.</span>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="Back to top">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+document.documentElement.classList.add('js');
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.getElementById('year').textContent = new Date().getFullYear();
+const nav = document.getElementById('nav');
+const toTop = document.getElementById('toTop');
+const progress = document.getElementById('progress');
+addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', scrollY > 40);
+  toTop.classList.toggle('show', scrollY > 700);
+  const h = document.documentElement.scrollHeight - innerHeight;
+  progress.style.width = (h > 0 ? (scrollY / h) * 100 : 0) + '%';
+}, { passive: true });
+toTop.addEventListener('click', () => scrollTo({ top: 0, behavior: RM ? 'auto' : 'smooth' }));
+const mm = document.getElementById('mobileMenu');
+document.getElementById('menuBtn').onclick = () => mm.classList.add('open');
+document.getElementById('menuClose').onclick = () => mm.classList.remove('open');
+mm.querySelectorAll('a').forEach(a => a.onclick = () => mm.classList.remove('open'));
+const aura = document.getElementById('aura');
+if (matchMedia('(pointer:fine)').matches) {
+  addEventListener('pointermove', e => { aura.style.opacity = 1; aura.style.left = e.clientX + 'px'; aura.style.top = e.clientY + 'px'; });
+}
+const io = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (en.isIntersecting) {
+      setTimeout(() => en.target.classList.add('in'), RM ? 0 : parseInt(en.target.dataset.delay || 0, 10));
+      io.unobserve(en.target);
+    }
+  });
+}, { threshold: .15 });
+document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+if (matchMedia('(pointer:fine)').matches && !RM) {
+  document.querySelectorAll('[data-tilt]').forEach(card => {
+    card.addEventListener('pointermove', e => {
+      const r = card.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height;
+      card.style.setProperty('--gx', (px * 100) + '%');
+      card.style.setProperty('--gy', (py * 100) + '%');
+      card.style.transform = 'rotateY(' + ((px - .5) * 12).toFixed(2) + 'deg) rotateX(' + ((.5 - py) * 10).toFixed(2) + 'deg) translateZ(10px)';
+    });
+    card.addEventListener('pointerleave', () => card.style.transform = '');
+  });
+}
+</script>
+</body>
+</html>
