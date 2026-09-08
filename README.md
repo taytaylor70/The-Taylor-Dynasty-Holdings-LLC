@@ -6,9 +6,20 @@ The official website + MCP knowledge server for The Taylor Dynasty Holdings —
 a first-generation family enterprise: one parent ecosystem, five ventures,
 100% founder-owned.
 
+> **This repo is the AI Project Vault.** The single source of truth is
+> `vault/` — the website and MCP server are *projections* of it. AI tools
+> (ChatGPT, Claude, Gemini, Lovable, Replit, Cursor) work **on** these
+> projects; they do not **own** them. Start at `vault/README.md`.
+
 ## Structure
 
 ```
+├── vault/            ← THE SOURCE OF TRUTH (projects, knowledge, assets)
+│   ├── PROJECTS/         One folder per venture — project.md is the front door
+│   ├── KNOWLEDGE/        decisions · research · specs · prompts · roadmaps
+│   └── ASSETS/           logos · pdfs · contracts · images · code
+├── AGENTS.md         The contract every AI tool inherits
+├── CLAUDE.md         Pointer to AGENTS.md (Claude auto-reads this)
 ├── index.html        Home — earn the click (3D hero, 4D tesseract, live effects)
 ├── holdings.html     The Ventures — Dynasty map, five ventures, legal spine
 ├── tech.html         The Craft — capabilities, receipts, bite-sized AI bots
@@ -17,6 +28,9 @@ a first-generation family enterprise: one parent ecosystem, five ventures,
 ├── assets/           Favicons, OG image, source photography
 └── mcp/              Zero-dependency MCP server (the house knowledge base)
 ```
+
+> The HTML pages and the MCP server are **projections** of
+> `vault/KNOWLEDGE/specs/`. If they disagree with the spec, the spec wins.
 
 ## The site
 
