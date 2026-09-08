@@ -6,12 +6,16 @@ owner: L. Taylor III
 updated: 2026-09-08
 ---
 
+<!-- GENERATED FILE — do not edit by hand.
+     Source of truth: vault/KNOWLEDGE/specs/canonical.json
+     Regenerate with:  python3 tools/build_specs.py -->
+
 # Canonical House Facts
 
 > **Canonical.** The website (`index.html`, `holdings.html`, `tech.html`,
 > `about.html`, `contact.html`) and the MCP server (`mcp/server.py`) are
-> generated from this file. If they disagree, this file wins. Change it here
-> first, then update the projections.
+> generated from `canonical.json`. If they disagree, the JSON wins.
+> Change it here first, then update the projections.
 
 ## Founder
 
@@ -22,8 +26,8 @@ updated: 2026-09-08
 | Based in | Columbus, Ohio · Eastern Time |
 | Roots | Orlando, Florida roots, Maryland finish |
 | Generation | First generation — the dynasty starts with him |
-| Education (public record) | Office Administration Certification (2013); GED — McDonough High School, Maryland (2008) |
-| Standard quote | "I love anything Technology, Fast, seductive, grown and sexy, as well as having determination for the making of greatness." |
+| Education (public record) | Office Administration Certification (2013) · GED — McDonough High School, Maryland (2008) |
+| Standard quote | I love anything Technology, Fast, seductive, grown and sexy, as well as having determination for the making of greatness. |
 | Story (short) | Saw technology promise a meritocracy and quietly become a gate. Built the house to close that gap — certified in the fundamentals, self-taught in the future, 100% founder-owned. |
 
 ## Ventures
@@ -80,17 +84,19 @@ updated: 2026-09-08
 
 | Page | Goal | Single action |
 |---|---|---|
-| `/` (index.html) | Earn the click — make a stranger feel the brand in 5 seconds | Request Private Access → dial (202) 276-0500 |
-| `/about` (about.html) | Build trust — the problem, the receipts, the payoff | Call the founder directly |
-| `/holdings` (holdings.html) | Show proof — the five ventures and the legal spine | Request the private deck |
-| `/tech` (tech.html) | Establish authority — capability plus taste | Start a project conversation |
-| `/contact` (contact.html) | Convert — zero friction between intent and a dial | Dial (202) 276-0500 |
+| / (index.html) | Earn the click — make a stranger feel the brand in 5 seconds | Request Private Access → dial (202) 276-0500 |
+| /about (about.html) | Build trust — the problem, the receipts, the payoff | Call the founder directly |
+| /holdings (holdings.html) | Show proof — the five ventures and the legal spine | Request the private deck |
+| /tech (tech.html) | Establish authority — capability plus taste | Start a project conversation |
+| /contact (contact.html) | Convert — zero friction between intent and a dial | Dial (202) 276-0500 |
 
 ## Privacy rules (baked into these facts)
 
-No street address · no birthday/birth time · no home city · no school names.
-If a fact isn't safe for the public website, it isn't here.
+- No street address
+- No birthday / birth time
+- No home city
+- No school names
 
 ## Change log
 
-- `2026-09-08` — created by consolidating the MCP server knowledge base into one canonical spec.
+- `2026-09-08` — version 1 (generated from canonical.json).

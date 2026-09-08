@@ -1,12 +1,24 @@
 # Specs
 
 Canonical specs. The website and the MCP server are **projections** of these
-files — change facts here first, then regenerate/update the projections.
+facts — change them here first, then regenerate/update the projections.
 
-| Spec | Governs |
+## The single source of truth
+
+| File | Role |
 |---|---|
-| `canonical-house-facts.md` | Founder, ventures, capabilities, career, contact, site map |
-| `brand-guidelines.md` | Palette, voice, and the house copy rules |
+| `canonical.json` | **THE source of truth** — all house facts, machine-readable |
+| `canonical-house-facts.md` | *generated* — human-readable rendering of the JSON |
+| `brand-guidelines.md` | *generated* — brand rendering of the JSON |
 
-Use `../../templates/spec.md`. If a projection disagrees with a spec, the
-**spec wins** — fix the projection, not the spec.
+- `mcp/server.py` loads `canonical.json` at runtime and holds **no facts**.
+- The two markdown files are generated from the JSON. **Do not hand-edit them.**
+
+## Editing a fact
+
+1. Edit `canonical.json`.
+2. Run `python3 tools/build_specs.py` to regenerate the markdown specs.
+3. Commit both. The MCP server picks up the change automatically at next start.
+
+If a projection disagrees with `canonical.json`, the **JSON wins** — fix the
+projection, not the JSON.

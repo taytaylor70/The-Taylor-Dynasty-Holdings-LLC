@@ -44,9 +44,13 @@ They are never the owner.
 ## Where the source of truth lives
 
 - **Canonical facts** (founder, ventures, brand, contact, capabilities) live in
-  `KNOWLEDGE/specs/canonical-house-facts.md`.
-- The website (`../index.html` etc.) and the MCP server (`../mcp/server.py`)
-  are **projections** of that spec. If they disagree, the spec wins.
+  `KNOWLEDGE/specs/canonical.json` — a single machine-readable file.
+- The MCP server (`../mcp/server.py`) **loads that JSON at runtime and holds no
+  facts of its own**.
+- The markdown specs (`canonical-house-facts.md`, `brand-guidelines.md`) are
+  **generated** from the JSON — run `python3 tools/build_specs.py`.
+- The website (`../index.html` etc.) is a **projection** of the same facts.
+  If any of them disagree, `canonical.json` wins.
 - **Every consequential decision** gets its own record in
   `KNOWLEDGE/decisions/`. Decisions are append-only; supersede, never delete.
 

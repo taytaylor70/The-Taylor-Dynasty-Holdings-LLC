@@ -11,3 +11,4 @@ Use `../../templates/decision.md`. Number sequentially (`0001`, `0002`, …).
 |---|---|---|
 | 0001 | The Vault is the single source of truth | accepted |
 | 0002 | Public-safe knowledge only | accepted |
+| 0003 | Canonical facts live in one JSON file | accepted |

@@ -40,7 +40,9 @@ substitute your judgment for his, invent facts, or sand down his voice.
   anywhere in this repo.
 - Write "as the AI" or claim ownership of a project in any copy.
 - Hardcode canonical facts into `*.html` or `mcp/server.py` — a canonical fact
-  lives in `vault/KNOWLEDGE/specs/`; the HTML and server are derived from it.
+  lives in `vault/KNOWLEDGE/specs/canonical.json`; the HTML and server are
+  derived from it. The markdown specs under `vault/KNOWLEDGE/specs/` are
+  **generated** (run `python3 tools/build_specs.py` after changing the JSON).
 
 ## Privacy (non-negotiable)
 

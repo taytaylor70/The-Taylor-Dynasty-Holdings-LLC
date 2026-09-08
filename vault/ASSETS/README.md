@@ -21,7 +21,7 @@ and *projects* (what we're building).
 ## Note on contracts
 
 The house's operating agreement and IP portfolio are referenced in
-`../KNOWLEDGE/specs/canonical-house-facts.md` but intentionally **not** stored
+`../KNOWLEDGE/specs/canonical.json` but intentionally **not** stored
 here in a public repo. If you hold the actual documents, store them privately
 (e.g. a private drive or a private repo) and log their location in a private
 note — never in `contracts/` of a public checkout.

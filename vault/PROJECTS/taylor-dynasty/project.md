@@ -36,7 +36,7 @@ The public site (`../../index.html` …) is the storefront; the MCP server
 
 ## What we know (links, not copies)
 
-- Spec: `../../KNOWLEDGE/specs/canonical-house-facts.md` (ventures, brand, contact)
+- Spec: `../../KNOWLEDGE/specs/canonical.json` (ventures, brand, contact)
 - Decisions: `../../KNOWLEDGE/decisions/`
 - Roadmap: `../../KNOWLEDGE/roadmaps/taylor-dynasty.md`
 

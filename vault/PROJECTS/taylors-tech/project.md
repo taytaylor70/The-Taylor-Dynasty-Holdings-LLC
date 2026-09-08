@@ -22,11 +22,11 @@ with every fix shipping alongside its explanation.
 ## Status
 
 Building. Flagship deliverable is the in-house AI platform (see `tayvora`).
-Capabilities are locked in `../../KNOWLEDGE/specs/canonical-house-facts.md`.
+Capabilities are locked in `../../KNOWLEDGE/specs/canonical.json`.
 
 ## What we know (links, not copies)
 
-- Spec: `../../KNOWLEDGE/specs/canonical-house-facts.md` (capabilities, audience)
+- Spec: `../../KNOWLEDGE/specs/canonical.json` (capabilities, audience)
 - Decisions: `../../KNOWLEDGE/decisions/`
 - Roadmap: `../../KNOWLEDGE/roadmaps/taylors-tech.md`
 

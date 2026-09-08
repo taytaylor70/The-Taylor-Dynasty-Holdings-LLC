@@ -24,7 +24,7 @@ Building (est. 2025). Storefront concept and sourcing imagery exist in
 
 ## What we know (links, not copies)
 
-- Spec: `../../KNOWLEDGE/specs/canonical-house-facts.md` (venture record)
+- Spec: `../../KNOWLEDGE/specs/canonical.json` (venture record)
 - Decisions: `../../KNOWLEDGE/decisions/`
 - Roadmap: `../../KNOWLEDGE/roadmaps/oasis-marketplace.md`
 

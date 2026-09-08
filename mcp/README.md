@@ -1,8 +1,9 @@
 # The Taylor Dynasty — MCP Server
 
-> **This server is a projection, not the source of truth.** Its knowledge is
-> derived from `../vault/KNOWLEDGE/specs/canonical-house-facts.md`. If they
-> disagree, the spec wins — change the spec, then update this server.
+> **This server holds no facts of its own.** It loads its entire knowledge base
+> at runtime from `../vault/KNOWLEDGE/specs/canonical.json` — the single source
+> of truth. To change a fact, edit the JSON and restart the server; the markdown
+> specs are regenerated with `python3 tools/build_specs.py`.
 
 Turn any MCP-capable client (Claude Desktop, Claude Code, Cursor, etc.) into an
 assistant that *knows the house*: the ventures, the founder's public story, the
@@ -60,14 +61,24 @@ Add to `claude_desktop_config.json` (Settings → Developer → Edit Config):
 claude mcp add taylor-dynasty python3 /absolute/path/to/taylor-dynasty/mcp/server.py
 ```
 
+## Where the data lives
+
+`server.py` resolves `canonical.json` relative to its own location, so keep it
+inside the repo. To point it elsewhere (e.g. a packaged deploy), set:
+
+```bash
+export TAYLOR_DYNASTY_CANONICAL=/absolute/path/to/canonical.json
+```
+
 ## Privacy rules (enforced in the data, not just the docs)
 
 The knowledge base mirrors the public site exactly — it contains **no** street
 address, birthday or birth time, home city, or school names. If a fact isn't
-safe for the website, it isn't in the server.
+safe for the website, it isn't in `canonical.json`.
 
 ## Extending it
 
 Ideas queued: `resources/` exposing each page's copy as an MCP resource,
-`prompts/` for generating on-brand proposals, and a `site_stats` tool wired to
-real analytics once the domain is live.
+`prompts/` for generating on-brand proposals (the prompts now live in
+`../vault/KNOWLEDGE/prompts/`), and a `site_stats` tool wired to real
+analytics once the domain is live.

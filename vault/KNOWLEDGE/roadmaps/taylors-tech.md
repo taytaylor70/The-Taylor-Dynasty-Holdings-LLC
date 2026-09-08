@@ -21,4 +21,4 @@ updated: 2026-09-08
 
 ## Shipped
 
-- `2026-09-08` — capabilities and audience locked in `specs/canonical-house-facts.md`.
+- `2026-09-08` — capabilities and audience locked in `specs/canonical.json`.
