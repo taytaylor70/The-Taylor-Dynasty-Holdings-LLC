@@ -7,6 +7,7 @@
     "note": "THE single source of truth. mcp/server.py loads this at runtime; the markdown specs under vault/KNOWLEDGE/specs/ are generated from it by tools/build_specs.py. Change facts here first."
   },
   "founder": {
+    "full_name": "Luther A. Taylor III",
     "preferred_name": "L. Taylor III (goes by \"TayTay\" in person)",
     "role": "Founder — All Technology, Software Engineering, Digital Product Creation",
     "based_in": "Columbus, Ohio · Eastern Time",

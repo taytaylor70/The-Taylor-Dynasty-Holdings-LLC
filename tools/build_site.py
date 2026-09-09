@@ -52,8 +52,11 @@ def _values(data):
         "CITY": f["based_in"].split("\u00b7")[0].strip(),
         "CITY_TZ": f["based_in"],
         "FOUNDER_NAME": f["preferred_name"].split(" (")[0],
+        "FOUNDER_FULL_NAME": f.get("full_name", f["preferred_name"].split(" (")[0]),
         "FOUNDER_QUOTE": f["standard_quote"],
     }
+    for i, edu in enumerate(f["education_public"]):
+        vals["EDU%d" % i] = edu
     for i, venture in enumerate(v):
         vals["V%d_NAME" % i] = venture["name"]
         vals["V%d_SECTOR" % i] = venture.get("sector", venture["type"])
@@ -82,7 +85,11 @@ EXTRACT_PAIRS = [
     ("Building Legacy. Creating Value. Engineering the Future.", "{{TAGLINE}}"),
     ("I love anything Technology, Fast, seductive, grown and sexy, as well as "
      "having determination for the making of greatness.", "{{FOUNDER_QUOTE}}"),
+    ("Luther A. Taylor III", "{{FOUNDER_FULL_NAME}}"),
     ("L. Taylor III", "{{FOUNDER_NAME}}"),
+    ("Office Administration Certification (2013)", "{{EDU0}}"),
+    ("GED — Maurice J. McDonough High School, Maryland (2008)", "{{EDU1}}"),
+    ("GED — McDonough High School, Maryland (2008)", "{{EDU1}}"),
     # venture names (plain, unambiguous)
     ("The Taylor Dynasty Holdings LLC", "{{V0_NAME}}"),
     ("Oasis Marketplace", "{{V1_NAME}}"),

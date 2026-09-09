@@ -97,15 +97,17 @@ def t_overview(_):
 
 def t_founder(_):
     ed = "\n".join("  · " + e for e in FOUNDER["education_public"])
-    return "\n".join([
+    lines = [
         "FOUNDER PROFILE — " + FOUNDER["preferred_name"],
+        "Full name: " + FOUNDER.get("full_name", FOUNDER["preferred_name"].split(" (")[0]),
         "Role: " + FOUNDER["role"],
         "Based: " + FOUNDER["based_in"],
         "Roots: " + FOUNDER["roots"],
         "Generation: " + FOUNDER["generation"],
         "Education (public record):", ed,
         "", "Story: " + FOUNDER["story_short"],
-    ])
+    ]
+    return "\n".join(lines)
 
 def t_ventures(_):
     out = ["THE VENTURES (6 entries: parent + 5)"]

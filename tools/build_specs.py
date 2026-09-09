@@ -64,6 +64,7 @@ def build_house_facts(data):
         "",
         _table([
             ["Field", "Value"],
+            ["Full name", f.get("full_name", "—")],
             ["Preferred name", f["preferred_name"]],
             ["Role", f["role"]],
             ["Based in", f["based_in"]],

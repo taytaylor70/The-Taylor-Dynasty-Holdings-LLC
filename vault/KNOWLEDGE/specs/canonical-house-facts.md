@@ -21,6 +21,7 @@ updated: 2026-09-08
 
 | Field | Value |
 |---|---|
+| Full name | Luther A. Taylor III |
 | Preferred name | L. Taylor III (goes by "TayTay" in person) |
 | Role | Founder — All Technology, Software Engineering, Digital Product Creation |
 | Based in | Columbus, Ohio · Eastern Time |

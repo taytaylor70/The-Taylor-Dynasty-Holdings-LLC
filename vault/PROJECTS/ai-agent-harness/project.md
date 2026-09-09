@@ -41,15 +41,17 @@ generated from `../../site/templates/` by `../../tools/build_site.py`.
 
 ## Open questions
 
-- [ ] Resolve founder-record drift: the site's "On the Record" block says
-      **Luther A. Taylor III** and **Maurice J. McDonough High School**, while
-      canonical.json records "L. Taylor III" and "McDonough High School".
-      Which is authoritative, and does the fuller school name belong in a
-      public-safe repo at all?
 - [ ] Which MCP clients to document onboarding for (Claude, Cursor, others).
 - [ ] Tokenize the two remaining *derived* venture-name forms (the `<br>`
       line-break in the holdings map, and the `&#39;` entity in the index
       contact dropdown) so 100% of name occurrences are generated.
+
+## Resolved
+
+- Founder-record drift (2026-09-08, owner decision): full legal name is
+  **Luther A. Taylor III** (now in canonical.json + site + MCP founder profile);
+  the school is **McDonough High School** (abbreviated — "Maurice J." scrubbed
+  from the site, matching the public-safe record). See log below.
 
 ## Log
 
@@ -58,3 +60,6 @@ generated from `../../site/templates/` by `../../tools/build_site.py`.
       generated (single source of truth).
 - `2026-09-08` — the five website pages now generate from canonical.json via
       `site/templates/` + `tools/build_site.py`.
+- `2026-09-08` — reconciled the founder-record drift: full name → canonical
+      (`full_name`), school name → abbreviated, and the education facts are now
+      tokenized (`{{EDU0}}`, `{{EDU1}}`) so they can't drift again.
