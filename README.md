@@ -20,17 +20,20 @@ a first-generation family enterprise: one parent ecosystem, five ventures,
 │   └── ASSETS/           logos · pdfs · contracts · images · code
 ├── AGENTS.md         The contract every AI tool inherits
 ├── CLAUDE.md         Pointer to AGENTS.md (Claude auto-reads this)
-├── index.html        Home — earn the click (3D hero, 4D tesseract, live effects)
-├── holdings.html     The Ventures — Dynasty map, five ventures, legal spine
-├── tech.html         The Craft — capabilities, receipts, bite-sized AI bots
-├── about.html        The Founder — problem, receipts, payoff
-├── contact.html      Private Access — one number, zero gatekeepers
+├── site/templates/   The five pages as templates (facts injected from the spec)
+├── tools/            build_specs.py (markdown) · build_site.py (HTML)
+├── index.html        Home — generated from site/templates/ (3D hero, live effects)
+├── holdings.html     The Ventures — generated (Dynasty map, five ventures)
+├── tech.html         The Craft — generated (capabilities, receipts, bots)
+├── about.html        The Founder — generated (problem, receipts, payoff)
+├── contact.html      Private Access — generated (one number, zero gatekeepers)
 ├── assets/           Favicons, OG image, source photography
-└── mcp/              Zero-dependency MCP server (the house knowledge base)
+└── mcp/              Zero-dependency MCP server (loads canonical.json)
 ```
 
 > The HTML pages and the MCP server are **projections** of
-> `vault/KNOWLEDGE/specs/`. If they disagree with the spec, the spec wins.
+> `vault/KNOWLEDGE/specs/canonical.json`. If they disagree with the JSON, the
+> JSON wins — regenerate with `python3 tools/build_specs.py && python3 tools/build_site.py`.
 
 ## The site
 

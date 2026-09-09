@@ -21,6 +21,7 @@ substitute your judgment for his, invent facts, or sand down his voice.
 2. `vault/PROJECTS/<project>/project.md` — the project you're about to touch.
 3. `vault/KNOWLEDGE/decisions/` — decisions already made. Don't relitigate them.
 4. `vault/KNOWLEDGE/specs/` — canonical specs (house facts, brand, architecture).
+5. `site/templates/` — the website templates (facts are injected from the spec).
 
 ## Write back after you act
 
@@ -29,8 +30,10 @@ substitute your judgment for his, invent facts, or sand down his voice.
 - Record every consequential decision as a new record in
   `vault/KNOWLEDGE/decisions/` (use `vault/templates/decision.md`).
 - Bump the `updated:` field in the frontmatter of any file you change.
-- When you change the website or the MCP server, update the canonical specs in
-  `vault/KNOWLEDGE/specs/` too — not just the projection.
+- When a *fact* changes, edit `vault/KNOWLEDGE/specs/canonical.json` and
+  regenerate: `python3 tools/build_specs.py && python3 tools/build_site.py`
+  (the MCP server picks the JSON up automatically at next start). When *copy or
+  design* changes, edit `site/templates/` and run `python3 tools/build_site.py`.
 
 ## Never
 
@@ -41,8 +44,12 @@ substitute your judgment for his, invent facts, or sand down his voice.
 - Write "as the AI" or claim ownership of a project in any copy.
 - Hardcode canonical facts into `*.html` or `mcp/server.py` — a canonical fact
   lives in `vault/KNOWLEDGE/specs/canonical.json`; the HTML and server are
-  derived from it. The markdown specs under `vault/KNOWLEDGE/specs/` are
-  **generated** (run `python3 tools/build_specs.py` after changing the JSON).
+  derived from it.
+- Edit generated files by hand. The five `*.html` pages are **generated** from
+  `site/templates/` + `canonical.json` (run `python3 tools/build_site.py`).
+  The markdown specs under `vault/KNOWLEDGE/specs/` are **generated** from the
+  same JSON (run `python3 tools/build_specs.py`). Change the JSON or a
+  template, then regenerate — never edit the output directly.
 
 ## Privacy (non-negotiable)
 

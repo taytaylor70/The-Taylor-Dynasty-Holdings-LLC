@@ -49,7 +49,9 @@ They are never the owner.
   facts of its own**.
 - The markdown specs (`canonical-house-facts.md`, `brand-guidelines.md`) are
   **generated** from the JSON — run `python3 tools/build_specs.py`.
-- The website (`../index.html` etc.) is a **projection** of the same facts.
+- The website (`../index.html` etc.) is a **projection** of the same facts:
+  the pages are generated from `../site/templates/` + the JSON by
+  `../tools/build_site.py`.
   If any of them disagree, `canonical.json` wins.
 - **Every consequential decision** gets its own record in
   `KNOWLEDGE/decisions/`. Decisions are append-only; supersede, never delete.

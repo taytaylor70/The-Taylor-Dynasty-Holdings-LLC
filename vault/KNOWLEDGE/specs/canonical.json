@@ -23,36 +23,42 @@
     {
       "name": "The Taylor Dynasty Holdings LLC",
       "type": "Parent ecosystem",
+      "sector": "The Parent",
       "status": "Active · 100% founder-owned · zero outside investors",
       "summary": "The parent company and legal spine: operating agreement (trust ownership, management authority, capital, distributions, banking authority, successor continuity, dissolution, Schedule A) plus a trademark & IP portfolio system with USPTO filing tracker, domain and copyright registries."
     },
     {
       "name": "Oasis Marketplace",
       "type": "Commerce · digital storefront",
+      "sector": "Commerce",
       "status": "Building (est. 2025)",
       "summary": "The commerce layer of the ecosystem — the house's digital products and a shortlist of curated goods, sold under one standard."
     },
     {
       "name": "DogSphere",
       "type": "Pet ecosystem",
+      "sector": "Pet Ecosystem",
       "status": "Building (est. 2025)",
       "summary": "Everything dogs, in one sphere — products, community, and care for the people who take the 6 a.m. walk."
     },
     {
       "name": "Taylor Made Real Estate",
       "type": "Property",
+      "sector": "Property",
       "status": "Building (est. 2025)",
       "summary": "The family trade, formalized. Taylor Made General Contractor ran job sites 1995–2015; the name inherits two decades of building standard and points it at property."
     },
     {
       "name": "The Nephew's First Business™",
       "type": "Legacy venture",
+      "sector": "Legacy",
       "status": "Trademark filed · building",
       "summary": "Labeled exactly as promised: the nephew's first business. Built hand-in-hand with the next generation — the dynasty's first inheritance, live."
     },
     {
       "name": "The Taylor Edition",
       "type": "AI platform · software",
+      "sector": "AI · Software",
       "status": "In development (flagship)",
       "summary": "The house's AI platform — built in-house, in public. The flagship proof that the technology division ships, not just plans."
     }
@@ -136,6 +142,8 @@
   ],
   "contact": {
     "cell": "(202) 276-0500 (call or text — the founder answers)",
+    "phone": "(202) 276-0500",
+    "phone_tel": "+12022760500",
     "email": "Taytaylor70@gmail.com",
     "hours": "Eastern Time · response within 24 hours",
     "philosophy": "One number, zero gatekeepers. Say who you are, ask the real question, leave with a next step — a price, a plan, or an honest no."

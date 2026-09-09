@@ -1,28 +1,25 @@
 <!DOCTYPE html>
-<!-- GENERATED FILE — do not edit by hand.
-     Source of truth: vault/KNOWLEDGE/specs/canonical.json
-     Edit site/templates/ + run:  python3 tools/build_site.py -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Holdings — The Ventures — THE TAYLOR DYNASTY</title>
-<meta name="description" content="Five ventures under one parent ecosystem: Oasis Marketplace, DogSphere, Taylor Made Real Estate, The Nephew's First Business™, and The Taylor Edition.">
+<title>Private Access — Contact — THE TAYLOR DYNASTY</title>
+<meta name="description" content="Reach {{FOUNDER_NAME}} directly — call or text {{PHONE}}. One number, zero gatekeepers, Eastern Time.">
 <!-- Social &amp; icons — update the taylordynasty.com domain once registered -->
-<meta name="author" content="L. Taylor III">
+<meta name="author" content="{{FOUNDER_NAME}}">
 <meta name="theme-color" content="#0b0c0c">
 <meta property="og:site_name" content="THE TAYLOR DYNASTY HOLDINGS">
-<meta property="og:title" content="Holdings — The Ventures — THE TAYLOR DYNASTY">
-<meta property="og:description" content="Five ventures under one parent ecosystem: Oasis Marketplace, DogSphere, Taylor Made Real Estate, The Nephew's First Business™, and The Taylor Edition.">
+<meta property="og:title" content="Private Access — Contact — THE TAYLOR DYNASTY">
+<meta property="og:description" content="Reach {{FOUNDER_NAME}} directly — call or text {{PHONE}}. One number, zero gatekeepers, Eastern Time.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://taylordynasty.com/holdings/">
+<meta property="og:url" content="https://taylordynasty.com/contact/">
 <meta property="og:image" content="https://taylordynasty.com/assets/og-brand.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="The Taylor Dynasty Holdings monogram">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Holdings — The Ventures — THE TAYLOR DYNASTY">
-<meta name="twitter:description" content="Five ventures under one parent ecosystem: Oasis Marketplace, DogSphere, Taylor Made Real Estate, The Nephew's First Business™, and The Taylor Edition.">
+<meta name="twitter:title" content="Private Access — Contact — THE TAYLOR DYNASTY">
+<meta name="twitter:description" content="Reach {{FOUNDER_NAME}} directly — call or text {{PHONE}}. One number, zero gatekeepers, Eastern Time.">
 <meta name="twitter:image" content="https://taylordynasty.com/assets/og-brand.jpg">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
@@ -488,31 +485,28 @@ footer{position:relative;border-top:1px solid var(--gold);background:#091118;pad
 .nav-links a.active::after{width:100%}
 @media(max-width:1000px){.page-hero{grid-template-columns:1fr;gap:48px;padding-top:130px}}
 
-/* ---------- ecosystem map ---------- */
-.eco{max-width:1150px;margin:64px auto 0}
-.eco-parent{display:flex;flex-direction:column;align-items:center;gap:8px;width:300px;margin:0 auto;padding:24px 26px;border:1px solid var(--gold);background:linear-gradient(160deg,rgba(192,165,122,.14),rgba(192,165,122,.03));box-shadow:0 20px 60px rgba(0,0,0,.45);transition:transform .5s var(--ease)}
-.eco-parent:hover{transform:translateY(-4px)}
-.eco-parent .pm{width:44px;height:52px;display:flex;align-items:center;justify-content:center;border:2px solid var(--gold);border-radius:0 0 12px 12px}
-.eco-parent .pm span{font-family:var(--display);font-size:26px;color:var(--gold)}
-.eco-parent b{font-family:var(--display);font-weight:500;font-size:19px;color:var(--cream);letter-spacing:.08em;text-align:center}
-.eco-parent small{font-size:9px;letter-spacing:.38em;color:var(--gold);text-transform:uppercase}
-.eco-stem{width:1px;height:36px;margin:0 auto;background:linear-gradient(to bottom,var(--gold),rgba(192,165,122,.35))}
-.eco-rail{height:1px;margin:0 10%;background:linear-gradient(90deg,transparent,rgba(192,165,122,.55) 12%,rgba(192,165,122,.55) 88%,transparent)}
-.eco-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
-.eco-cell{display:flex;flex-direction:column;align-items:center}
-.eco-drop{width:1px;height:34px;background:rgba(192,165,122,.35)}
-.eco-node{width:100%;text-align:center;padding:18px 8px;border:1px solid rgba(192,165,122,.3);background:#0d1015;transition:all .4s}
-.eco-node b{display:block;font-family:var(--display);font-weight:500;font-size:15px;color:var(--cream);line-height:1.35}
-.eco-node small{display:block;margin-top:8px;font-size:8.5px;letter-spacing:.28em;color:var(--gold);text-transform:uppercase}
-.eco-node:hover{border-color:var(--gold);transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,0,0,.5);background:#10141b}
-@media(max-width:900px){.eco-rail,.eco-drop{display:none}.eco-grid{grid-template-columns:1fr;gap:12px;max-width:420px;margin:28px auto 0}}
-/* ---------- document stack ---------- */
-.docstack{display:flex;flex-direction:column;gap:10px;perspective:900px}
-.doc{display:flex;align-items:center;gap:16px;padding:17px 20px;border:1px solid rgba(192,165,122,.22);background:#0d1015;transition:all .45s var(--ease)}
-.doc svg{color:var(--gold);flex:none}
-.doc b{display:block;font-size:13.5px;color:var(--cream);letter-spacing:.06em;font-weight:500}
-.doc span{display:block;font-size:11.5px;color:var(--muted);margin-top:3px;letter-spacing:.04em;line-height:1.6}
-.doc:hover{transform:translateZ(30px) rotateX(3deg);border-color:rgba(192,165,122,.5);box-shadow:0 18px 44px rgba(0,0,0,.5)}
+.page-hero.centered{grid-template-columns:1fr;max-width:1060px;text-align:center}
+.page-hero.centered .prose{margin:28px auto 0}
+.mega-wrap{margin:44px 0 6px}
+.mega{font-family:var(--display);font-weight:500;font-size:clamp(42px,8.5vw,104px);letter-spacing:.01em;position:relative;display:inline-block;padding:20px 34px}
+.mega::before,.mega::after{content:"";position:absolute;inset:0;border:1px solid rgba(192,165,122,.4);border-radius:6px;pointer-events:none}
+.mega::before{animation:ring 2.8s ease-out infinite}
+.mega::after{animation:ring 2.8s ease-out 1.4s infinite}
+@keyframes ring{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.35,2);opacity:0}}
+.mega:hover::before{animation:none;opacity:0}
+.dial-hint{margin-top:18px;font-size:10px;letter-spacing:.42em;color:var(--gold);text-transform:uppercase}
+.hint-chips{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:26px}
+.hchip{font-size:9.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);border:1px solid rgba(192,165,122,.25);padding:9px 16px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px}
+.step{padding:34px 28px;border:1px solid rgba(192,165,122,.16);background:#0d1015;transition:all .4s}
+.step:hover{border-color:rgba(192,165,122,.45);transform:translateY(-4px)}
+.step b{font-family:var(--display);font-size:42px;color:rgba(192,165,122,.28);display:block;line-height:1;margin-bottom:16px}
+.step h3{font-family:var(--display);font-weight:500;font-size:20px;color:var(--cream);margin-bottom:10px}
+.step p{font-size:13px;color:var(--muted);line-height:1.8}
+.booking{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:44px}
+.bchip{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(192,165,122,.35);padding:11px 19px;transition:all .3s}
+.bchip:hover{background:var(--gold);color:var(--ink)}
+@media(max-width:860px){.steps{grid-template-columns:1fr}}
 
 </style>
 </head>
@@ -531,7 +525,7 @@ footer{position:relative;border-top:1px solid var(--gold);background:#091118;pad
       </div>
     </a>
     <div class="nav-links">
-      <a href="holdings.html" class="active">Holdings</a>
+      <a href="holdings.html">Holdings</a>
       <a href="tech.html">Tech</a>
       <a href="about.html">About</a>
       </div>
@@ -553,130 +547,95 @@ footer{position:relative;border-top:1px solid var(--gold);background:#091118;pad
   <a href="tech.html">Tech</a>
   <a href="about.html">About</a>
   <a href="contact.html" style="color:var(--gold)">Private Access</a>
-  <div class="mm-phone">CELL — (202) 276-0500</div>
+  <div class="mm-phone">CELL — {{PHONE}}</div>
 </div>
 
 <!-- ================= PAGE HERO ================= -->
-<header class="page-hero">
+<header class="page-hero centered">
   <div data-reveal>
-    <span class="kicker">The Portfolio · Holdings</span>
-    <h1 class="sec-title" style="font-size:clamp(38px,5.2vw,66px)">Five ventures. <em>One name on every door.</em></h1>
-    <div class="prose" style="margin-top:28px">
-      <p>The Taylor Dynasty isn't a company with subsidiaries — it's a parent ecosystem with heirs. Five ventures live under the name today, from a marketplace to a trademarked first business for the next generation. Some trade already; one is waiting on its young founder to grow into it. All of them are built the same way: in-house, on real paper, to one standard.</p>
+    <span class="kicker" style="justify-content:center">Private Access · Contact</span>
+    <h1 class="sec-title" style="font-size:clamp(38px,5.2vw,66px)">One number. <em>Zero gatekeepers.</em></h1>
+    <div class="prose">
+      <p>No forms vanishing into queues. No "someone will reach out." The founder answers his own line — call or text, Eastern Time, and bring the whole question.</p>
     </div>
-    <div class="cta-actions" style="justify-content:flex-start;margin-top:36px">
-      <a class="btn-gold" href="tel:+12022760500">Request the Private Deck · (202) 276-0500 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg></a>
-      <a class="btn-ghost" href="#map">See the Dynasty Map</a>
+    <div class="mega-wrap">
+      <a class="mega text-gold-gradient" href="tel:{{PHONE_TEL}}">{{PHONE}}</a>
+      <div class="dial-hint">Tap to dial · Call or text</div>
     </div>
-  </div>
-  <div data-reveal="right">
-    <div class="facts" style="grid-template-columns:1fr 1fr;margin-top:0">
-      <div class="fact"><small>Ventures</small><b>Five — and counting</b></div>
-      <div class="fact"><small>Parent</small><b>The Taylor Dynasty Holdings LLC</b></div>
-      <div class="fact"><small>IP Position</small><b>Trust-owned trademarks · USPTO-tracked</b></div>
-      <div class="fact"><small>Capitalization</small><b>100% founder-owned · zero outside investors</b></div>
+    <div class="hint-chips">
+      <span class="hchip">Call or text</span><span class="hchip">The founder answers</span><span class="hchip">Eastern Time</span>
     </div>
   </div>
 </header>
 
-<!-- ================= DYNASTY MAP ================= -->
-<section class="sec" id="map" style="padding-top:80px">
+<!-- ================= CHANNELS + FORM ================= -->
+<section class="sec" id="channels">
+  <div class="contact-grid">
+    <div class="c-info">
+      <a class="c-row" href="tel:{{PHONE_TEL}}" data-reveal="left">
+        <span class="ci"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg></span>
+        <div><small>Cell — Direct Private Line</small><b>{{PHONE}}</b></div>
+      </a>
+      <a class="c-row" href="mailto:{{EMAIL}}" data-reveal="left" data-delay="100">
+        <span class="ci"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg></span>
+        <div><small>Correspondence</small><b>{{EMAIL}}</b></div>
+      </a>
+      <div class="c-row" data-reveal="left" data-delay="200">
+        <span class="ci"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <div><small>Headquarters</small><b>{{CITY}}</b></div>
+      </div>
+      <div class="c-row" data-reveal="left" data-delay="300">
+        <span class="ci"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+        <div><small>Response Window</small><b>Within 24 hours · Eastern Time</b></div>
+      </div>
+    </div>
+    <div class="form-card" data-reveal="right">
+      <form id="accessForm" novalidate>
+        <div class="f-row">
+          <div class="field"><label for="fName">Full Name</label><input id="fName" type="text" required placeholder="Your name"></div>
+          <div class="field"><label for="fEmail">Email</label><input id="fEmail" type="email" required placeholder="you@domain.com"></div>
+        </div>
+        <div class="field">
+          <label for="fInterest">Area of Interest</label>
+          <select id="fInterest">
+            <option>Custom AI Bot / Digital Product</option>
+            <option>IT, Cybersecurity &amp; Cloud Engagement</option>
+            <option>DevOps &amp; Automation Build</option>
+            <option>{{V3_NAME}}</option>
+            <option>{{V1_NAME}} / {{V2_NAME}}</option>
+            <option>{{V4_NAME}}</option>
+            <option>Press &amp; Media</option>
+            <option>Something Else</option>
+          </select>
+        </div>
+        <div class="field"><label for="fMsg">Message</label><textarea id="fMsg" placeholder="One sentence on what you're building — that's enough to start."></textarea></div>
+        <button type="submit" class="btn-gold" style="width:100%;justify-content:center">Request Private Access <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></button>
+        <div id="formOk">✦ &nbsp;Request received — the house will respond within 24 hours.&nbsp; ✦</div>
+      </form>
+      <p style="margin-top:16px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(229,230,236,.4);text-align:center">Form slows you down? The line is faster — {{PHONE}}</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHEN YOU CALL ================= -->
+<section class="sec" id="whenyoucall" style="padding-top:30px">
   <div data-reveal style="text-align:center">
-    <span class="kicker" style="justify-content:center">The Dynasty Map</span>
-    <h2 class="sec-title">One parent. <em>Five heirs.</em></h2>
+    <span class="kicker" style="justify-content:center">When You Call</span>
+    <h2 class="sec-title">Three steps. <em>No elevator pitch required.</em></h2>
   </div>
-  <div class="eco" data-reveal="zoom">
-    <div class="eco-parent"><div class="pm"><span>T</span></div><b>THE TAYLOR DYNASTY</b><small>Parent Ecosystem</small></div>
-    <div class="eco-stem"></div>
-    <div class="eco-rail"></div>
-    <div class="eco-grid"><div class="eco-cell"><div class="eco-drop"></div><a class="eco-node" href="#v-oasis"><b>Oasis<br>Marketplace</b><small>Commerce</small></a></div><div class="eco-cell"><div class="eco-drop"></div><a class="eco-node" href="#v-dogsphere"><b>DogSphere</b><small>Pet Ecosystem</small></a></div><div class="eco-cell"><div class="eco-drop"></div><a class="eco-node" href="#v-taylor-made"><b>Taylor Made<br>Real Estate</b><small>Property</small></a></div><div class="eco-cell"><div class="eco-drop"></div><a class="eco-node" href="#v-nephew"><b>The Nephew's<br>First Business™</b><small>Legacy</small></a></div><div class="eco-cell"><div class="eco-drop"></div><a class="eco-node" href="#v-edition"><b>The Taylor<br>Edition</b><small>AI · Software</small></a></div></div>
+  <div class="steps">
+    <div class="step" data-reveal><b>01</b><h3>Say who you are</h3><p>And what you're building — one sentence each. The founder takes it from there.</p></div>
+    <div class="step" data-reveal data-delay="120"><b>02</b><h3>Ask the real question</h3><p>The one that's actually blocking you, whether it's technical, financial, or pure doubt. You'll get a plain answer, not a pitch.</p></div>
+    <div class="step" data-reveal data-delay="240"><b>03</b><h3>Leave with a next step</h3><p>A price, a plan, or an honest no — decided on the call, not "after we circle back."</p></div>
   </div>
-</section>
-
-<!-- ================= THE VENTURES ================= -->
-<section class="sec" id="ventures" style="padding-top:80px">
-  <div data-reveal>
-    <span class="kicker">The Ventures</span>
-    <h2 class="sec-title">What the house <em>holds.</em></h2>
-    <p class="sec-sub">Each venture carries the family name and the family standard. Jump to any venture from the map above — or read straight through below.</p>
-  </div>
-  <div class="hold-grid">
-    <div class="hold" id="v-oasis" data-tilt data-reveal data-delay="0">
-      <span class="shine"></span>
-      <span class="bg-ico"><svg width="150" height="150" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M6 7h12l1.5 13.5a1 1 0 0 1-1 1h-13a1 1 0 0 1-1-1L6 7z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg></span>
-      <div class="sector">Commerce</div><h3>Oasis Marketplace</h3>
-      <p>The marketplace where the ecosystem meets the market — the house's digital products and a shortlist of curated goods, sold under one standard.</p>
-      <div class="est">EST. MMXXV · BUILDING</div>
-    </div>
-    <div class="hold" id="v-dogsphere" data-tilt data-reveal data-delay="80">
-      <span class="shine"></span>
-      <span class="bg-ico"><svg width="150" height="150" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="7" cy="8" r="1.6"/><circle cx="12" cy="6.4" r="1.6"/><circle cx="17" cy="8" r="1.6"/><path d="M12 11c-2.8 0-5 2.2-5 4.6 0 1.6 1.2 2.6 2.6 2.6 1 0 1.6-.4 2.4-.4s1.4.4 2.4.4c1.4 0 2.6-1 2.6-2.6 0-2.4-2.2-4.6-5-4.6z"/></svg></span>
-      <div class="sector">Pet Ecosystem</div><h3>DogSphere</h3>
-      <p>Everything dogs, in one sphere — products, community, and care for the people who take the 6 a.m. walk. Built with the same discipline as everything else under the name.</p>
-      <div class="est">EST. MMXXV · BUILDING</div>
-    </div>
-    <div class="hold" id="v-taylor-made" data-tilt data-reveal data-delay="160">
-      <span class="shine"></span>
-      <span class="bg-ico"><svg width="150" height="150" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg></span>
-      <div class="sector">Property</div><h3>Taylor Made Real Estate</h3>
-      <p>The family trade, formalized. Taylor Made General Contractor ran job sites from 1995 to 2015 — the name inherits two decades of building standard and points it at property.</p>
-      <div class="est">EST. MMXXV · BUILDING</div>
-    </div>
-    <div class="hold" id="v-nephew" data-tilt data-reveal data-delay="0">
-      <span class="shine"></span>
-      <span class="bg-ico"><svg width="150" height="150" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M3 18h18l-1.5-9-4.5 4-3-7-3 7-4.5-4z"/><path d="M5 22h14"/></svg></span>
-      <div class="sector">Legacy</div><h3>The Nephew's First Business™</h3>
-      <p>Labeled exactly as promised: the nephew's first business. A trademarked venture built hand-in-hand with the next generation — the dynasty's first inheritance, live.</p>
-      <div class="est">™ FILED · BUILDING</div>
-    </div>
-    <div class="hold" id="v-edition" data-tilt data-reveal data-delay="80">
-      <span class="shine"></span>
-      <span class="bg-ico"><svg width="150" height="150" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="6" y="6" width="12" height="12" rx="1.5"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/><circle cx="12" cy="12" r="2"/></svg></span>
-      <div class="sector">AI · Software</div><h3>The Taylor Edition</h3>
-      <p>The flagship: the house's AI platform — built in-house, in public. Proof that the technology division ships, not just plans.</p>
-      <div class="est">IN DEVELOPMENT</div>
-    </div>
-    <div class="hold" id="v-house" data-tilt data-reveal data-delay="160">
-      <span class="shine"></span>
-      <span class="bg-ico"><svg width="150" height="150" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M4 21h16M5 21V10M19 21V10M9 21v-7M15 21v-7M3 10l9-6 9 6z"/></svg></span>
-      <div class="sector">The Parent</div><h3>The Taylor Dynasty Holdings LLC</h3>
-      <p>The paper most empires skip: operating agreement, trust structure, trademark &amp; IP portfolio. The house above the ventures.</p>
-      <div class="est">ON PAPER · 100% FOUNDER-OWNED</div>
-    </div>
+  <div class="booking" data-reveal>
+    <span class="bchip">IT &amp; Cybersecurity Engagements</span>
+    <span class="bchip">Custom AI Bots</span>
+    <span class="bchip">Cloud &amp; DevOps Builds</span>
+    <span class="bchip">Real Estate</span>
+    <span class="bchip">Marketplace Partnerships</span>
   </div>
 </section>
-
-<!-- ================= BUILT ON PAPER ================= -->
-<section class="sec split" id="paper">
-  <div data-reveal="left">
-    <span class="kicker">The Legal Spine</span>
-    <h2 class="sec-title">Drawn on paper that <em>holds up in court.</em></h2>
-    <div class="prose" style="margin-top:24px">
-      <p>Most empires are drawn on napkins. This one filed first: the <strong>Operating Agreement came before the logo</strong> — trust ownership, management authority, capital contributions, distributions, banking authority, and successor continuity, down to dissolution and Schedule A.</p>
-      <p>Then the <strong>Trademark &amp; IP Portfolio System</strong>: trust-owned marks, an IP hierarchy, a portfolio ledger, a brand-asset inventory, a USPTO filing tracker, and domain &amp; copyright registries. The name is protected everywhere it lives — before it's famous, not after.</p>
-    </div>
-    <a href="about.html" class="btn-ghost" style="margin-top:32px;display:inline-flex">Meet the Founder <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-  </div>
-  <div class="docstack" data-reveal="right">
-      <div class="doc" data-reveal data-delay="0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg><div><b>Operating Agreement</b><span>Trust ownership · management authority · capital &amp; distributions · banking authority · successor continuity · dissolution · Schedule A</span></div></div>
-      <div class="doc" data-reveal data-delay="60"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg><div><b>Trust Structure</b><span>House assets held in trust — continuity beyond any one generation.</span></div></div>
-      <div class="doc" data-reveal data-delay="120"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg><div><b>Trademark &amp; IP Portfolio System</b><span>Trust-owned marks, IP hierarchy, portfolio ledger, brand-asset inventory.</span></div></div>
-      <div class="doc" data-reveal data-delay="180"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg><div><b>USPTO Filing Tracker</b><span>Every mark tracked from application to registration.</span></div></div>
-      <div class="doc" data-reveal data-delay="240"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg><div><b>Domain &amp; Copyright Registries</b><span>The name protected everywhere it lives.</span></div></div>
-      <div class="doc" data-reveal data-delay="300"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg><div><b>Recordkeeping Protocol</b><span>Even the exit is documented. Hopefully never used.</span></div></div>
-  </div>
-</section>
-
-<!-- ================= CTA ================= -->
-<div class="cta-band" data-reveal>
-  <span class="kicker" style="justify-content:center">Private Access</span>
-  <h2 class="sec-title">Ask for <em>the deck.</em></h2>
-  <p class="sec-sub" style="margin:20px auto 0">One call, one founder, one honest conversation about fit. If the house can't help, you'll hear it in the first five minutes.</p>
-  <div class="cta-actions">
-    <a class="btn-gold" href="tel:+12022760500">(202) 276-0500 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg></a>
-    <a class="btn-ghost" href="mailto:Taytaylor70@gmail.com">Taytaylor70@gmail.com</a>
-  </div>
-</div>
 
 <footer>
   <div class="foot-grid">
@@ -688,7 +647,7 @@ footer{position:relative;border-top:1px solid var(--gold);background:#091118;pad
           <div class="brand-line2">HOLDINGS</div>
         </div>
       </div>
-      <p class="foot-tag">Building Legacy. Creating Value. Engineering the Future.</p>
+      <p class="foot-tag">{{TAGLINE}}</p>
     </div>
     <div class="foot-col">
       <h4>The Empire</h4>
@@ -700,15 +659,15 @@ footer{position:relative;border-top:1px solid var(--gold);background:#091118;pad
     </div>
     <div class="foot-col">
       <h4>Private Access</h4>
-      <a href="tel:+12022760500">Cell — (202) 276-0500</a>
-      <a href="mailto:Taytaylor70@gmail.com">Taytaylor70@gmail.com</a>
-      <span>Columbus, Ohio · Eastern Time</span>
+      <a href="tel:{{PHONE_TEL}}">Cell — {{PHONE}}</a>
+      <a href="mailto:{{EMAIL}}">{{EMAIL}}</a>
+      <span>{{CITY_TZ}}</span>
       <span>By appointment only</span>
     </div>
   </div>
   <div class="foot-bottom">
-    <span>© <span id="year">2026</span> The Taylor Dynasty Holdings LLC. All rights reserved.</span>
-    <span>Built to be inherited.</span>
+    <span>© <span id="year">2026</span> {{V0_NAME}}. All rights reserved.</span>
+    <span>The first generation answers.</span>
   </div>
 </footer>
 
@@ -759,6 +718,18 @@ if (matchMedia('(pointer:fine)').matches && !RM) {
     card.addEventListener('pointerleave', () => card.style.transform = '');
   });
 }
+
+/* ---------- form (concierge simulation — no backend) ---------- */
+document.getElementById('accessForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  var n = document.getElementById('fName'), m = document.getElementById('fEmail'), ok = true;
+  if(!n.value.trim()){ n.style.borderColor='#c0a57a'; ok=false; }
+  if(!m.value.includes('@')){ m.style.borderColor='#c0a57a'; ok=false; }
+  if(!ok) return;
+  document.getElementById('formOk').style.display = 'block';
+  e.target.reset();
+});
+
 </script>
 </body>
 </html>

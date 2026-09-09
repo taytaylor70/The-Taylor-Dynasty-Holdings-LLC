@@ -23,7 +23,8 @@ and writes back. The harness is what keeps "works on" from becoming "owns".
 Building. `../../mcp/server.py` exposes the public knowledge base over MCP
 (10 tools) and **loads all facts from `../../KNOWLEDGE/specs/canonical.json`
 at runtime** — it holds no facts of its own. The markdown specs are generated
-from that JSON by `../../tools/build_specs.py`.
+from that JSON by `../../tools/build_specs.py`, and the five website pages are
+generated from `../../site/templates/` by `../../tools/build_site.py`.
 
 ## What we know (links, not copies)
 
@@ -35,16 +36,25 @@ from that JSON by `../../tools/build_specs.py`.
 ## Assets
 
 - Server: `../../mcp/server.py`, docs: `../../mcp/README.md`
-- Generator: `../../tools/build_specs.py`
+- Generators: `../../tools/build_specs.py` (markdown), `../../tools/build_site.py` (HTML)
+- Templates: `../../site/templates/`
 
 ## Open questions
 
-- [ ] Generate the website HTML from `canonical.json` too, or leave the HTML
-      hand-authored and the spec as the review reference?
+- [ ] Resolve founder-record drift: the site's "On the Record" block says
+      **Luther A. Taylor III** and **Maurice J. McDonough High School**, while
+      canonical.json records "L. Taylor III" and "McDonough High School".
+      Which is authoritative, and does the fuller school name belong in a
+      public-safe repo at all?
 - [ ] Which MCP clients to document onboarding for (Claude, Cursor, others).
+- [ ] Tokenize the two remaining *derived* venture-name forms (the `<br>`
+      line-break in the holdings map, and the `&#39;` entity in the index
+      contact dropdown) so 100% of name occurrences are generated.
 
 ## Log
 
 - `2026-09-08` — created the Vault; wired the harness to the Vault contract.
 - `2026-09-08` — server now loads `canonical.json` at runtime; markdown specs
       generated (single source of truth).
+- `2026-09-08` — the five website pages now generate from canonical.json via
+      `site/templates/` + `tools/build_site.py`.
