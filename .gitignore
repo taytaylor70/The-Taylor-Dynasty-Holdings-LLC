@@ -4,3 +4,13 @@ desktop.ini
 *.log
 .netlify
 .vercel
+
+# Contracts / legal docs are PRIVATE — never commit them here.
+vault/ASSETS/contracts/*
+!vault/ASSETS/contracts/.gitkeep
+
+# Secrets
+.env
+.env.*
+*.key
+*.pem

@@ -1,0 +1,201 @@
+{
+  "meta": {
+    "title": "Canonical House Facts",
+    "slug": "canonical-house-facts",
+    "version": 1,
+    "updated": "2026-09-08",
+    "note": "THE single source of truth. mcp/server.py loads this at runtime; the markdown specs under vault/KNOWLEDGE/specs/ are generated from it by tools/build_specs.py. Change facts here first."
+  },
+  "founder": {
+    "full_name": "Luther A. Taylor III",
+    "preferred_name": "L. Taylor III (goes by \"TayTay\" in person)",
+    "role": "Founder — All Technology, Software Engineering, Digital Product Creation",
+    "based_in": "Columbus, Ohio · Eastern Time",
+    "roots": "Orlando, Florida roots, Maryland finish",
+    "generation": "First generation — the dynasty starts with him",
+    "education_public": [
+      "Office Administration Certification (2013)",
+      "GED — McDonough High School, Maryland (2008)"
+    ],
+    "standard_quote": "I love anything Technology, Fast, seductive, grown and sexy, as well as having determination for the making of greatness.",
+    "story_short": "Saw technology promise a meritocracy and quietly become a gate. Built the house to close that gap — certified in the fundamentals, self-taught in the future, 100% founder-owned."
+  },
+  "ventures": [
+    {
+      "name": "The Taylor Dynasty Holdings LLC",
+      "type": "Parent ecosystem",
+      "sector": "The Parent",
+      "status": "Active · 100% founder-owned · zero outside investors",
+      "summary": "The parent company and legal spine: operating agreement (trust ownership, management authority, capital, distributions, banking authority, successor continuity, dissolution, Schedule A) plus a trademark & IP portfolio system with USPTO filing tracker, domain and copyright registries."
+    },
+    {
+      "name": "Oasis Marketplace",
+      "type": "Commerce · digital storefront",
+      "sector": "Commerce",
+      "status": "Building (est. 2025)",
+      "summary": "The commerce layer of the ecosystem — the house's digital products and a shortlist of curated goods, sold under one standard."
+    },
+    {
+      "name": "DogSphere",
+      "type": "Pet ecosystem",
+      "sector": "Pet Ecosystem",
+      "status": "Building (est. 2025)",
+      "summary": "Everything dogs, in one sphere — products, community, and care for the people who take the 6 a.m. walk."
+    },
+    {
+      "name": "Taylor Made Real Estate",
+      "type": "Property",
+      "sector": "Property",
+      "status": "Building (est. 2025)",
+      "summary": "The family trade, formalized. Taylor Made General Contractor ran job sites 1995–2015; the name inherits two decades of building standard and points it at property."
+    },
+    {
+      "name": "The Nephew's First Business™",
+      "type": "Legacy venture",
+      "sector": "Legacy",
+      "status": "Trademark filed · building",
+      "summary": "Labeled exactly as promised: the nephew's first business. Built hand-in-hand with the next generation — the dynasty's first inheritance, live."
+    },
+    {
+      "name": "The Taylor Edition",
+      "type": "AI platform · software",
+      "sector": "AI · Software",
+      "status": "In development (flagship)",
+      "summary": "The house's AI platform — built in-house, in public. The flagship proof that the technology division ships, not just plans."
+    }
+  ],
+  "capabilities": [
+    {
+      "name": "IT Specialist",
+      "description": "Solo IT operations end to end — setups, fixes, hardening; every fix comes with the explanation."
+    },
+    {
+      "name": "Cybersecurity",
+      "description": "Locks before launch — hardened accounts, devices, and habits sized for real budgets."
+    },
+    {
+      "name": "Cloud Architecture",
+      "description": "Right-sized infrastructure — from first domain to multi-region, zero enterprise bloat."
+    },
+    {
+      "name": "DevOps Automation",
+      "description": "If you do it twice, it gets scripted — pipelines, deployments, busywork automated."
+    },
+    {
+      "name": "Software Engineering",
+      "description": "Napkin to production — clean, documented, maintainable builds."
+    },
+    {
+      "name": "Digital Product Creation",
+      "description": "Bite-sized AI bots, built and sold digitally — bots that answer, automate, and sell."
+    }
+  ],
+  "audience": [
+    "Entry-level IT specialists — real skills, real tools, zero gatekeeping; the explanation comes with the fix.",
+    "Solo / one-person operations — security, cloud, and automation right-sized and fully owned."
+  ],
+  "career": [
+    {
+      "span": "1995–2015",
+      "org": "Taylor Made General Contractor, LLC",
+      "note": "Office assistant & carpenter's apprentice — the family business; work ethic installed early."
+    },
+    {
+      "span": "2015–2016",
+      "org": "MLS",
+      "note": "A year of showing up, every day, on time."
+    },
+    {
+      "span": "2016–2017",
+      "org": "Dover Cleaners",
+      "note": "Precision on a schedule."
+    },
+    {
+      "span": "2017–2018",
+      "org": "Redner's Warehouse Markets",
+      "note": "The public, at scale."
+    },
+    {
+      "span": "2017–2018",
+      "org": "Perdue Farms, Inc.",
+      "note": "Industrial discipline."
+    },
+    {
+      "span": "2019",
+      "org": "TAB Retail Construction",
+      "note": "Back on job sites — the family trade, one more time."
+    },
+    {
+      "span": "2019–2020",
+      "org": "Amazon Prime Delivery (DSP)",
+      "note": "Routes, rates, and logistics at scale — from the inside."
+    },
+    {
+      "span": "2020–",
+      "org": "FedEx (delivery driver)",
+      "note": "The last W-2. After the route: certifications, code, cloud — the pivot went full-time."
+    },
+    {
+      "span": "Now",
+      "org": "The Taylor Dynasty",
+      "note": "Every shift cashed, every skill banked. The house stands on all of it."
+    }
+  ],
+  "contact": {
+    "cell": "(202) 276-0500 (call or text — the founder answers)",
+    "phone": "(202) 276-0500",
+    "phone_tel": "+12022760500",
+    "email": "Taytaylor70@gmail.com",
+    "hours": "Eastern Time · response within 24 hours",
+    "philosophy": "One number, zero gatekeepers. Say who you are, ask the real question, leave with a next step — a price, a plan, or an honest no."
+  },
+  "brand": {
+    "palette": {
+      "Onyx": "#0b0c0c",
+      "Dynasty Gold": "#c0a57a",
+      "Heirloom Cream": "#f2ecdb",
+      "Midnight": "#091118"
+    },
+    "voice": "Clarity, high efficiency, empathy — formal but human. Skeptical, innovative, humble.",
+    "rules": [
+      "Never brag — show receipts instead.",
+      "No apologies in copy; no empty flattery.",
+      "One primary action per page, and every action ends at the cell.",
+      "Explanations ship with the work — plain English, always."
+    ],
+    "tagline": "Building Legacy. Creating Value. Engineering the Future."
+  },
+  "site_map": [
+    {
+      "page": "/ (index.html)",
+      "goal": "Earn the click — make a stranger feel the brand in 5 seconds",
+      "action": "Request Private Access → dial (202) 276-0500"
+    },
+    {
+      "page": "/about (about.html)",
+      "goal": "Build trust — the problem, the receipts, the payoff",
+      "action": "Call the founder directly"
+    },
+    {
+      "page": "/holdings (holdings.html)",
+      "goal": "Show proof — the five ventures and the legal spine",
+      "action": "Request the private deck"
+    },
+    {
+      "page": "/tech (tech.html)",
+      "goal": "Establish authority — capability plus taste",
+      "action": "Start a project conversation"
+    },
+    {
+      "page": "/contact (contact.html)",
+      "goal": "Convert — zero friction between intent and a dial",
+      "action": "Dial (202) 276-0500"
+    }
+  ],
+  "privacy": [
+    "No street address",
+    "No birthday / birth time",
+    "No home city",
+    "No school names beyond the public GED record (McDonough High School)"
+  ]
+}

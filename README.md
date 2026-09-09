@@ -6,17 +6,34 @@ The official website + MCP knowledge server for The Taylor Dynasty Holdings —
 a first-generation family enterprise: one parent ecosystem, five ventures,
 100% founder-owned.
 
+> **This repo is the AI Project Vault.** The single source of truth is
+> `vault/` — the website and MCP server are *projections* of it. AI tools
+> (ChatGPT, Claude, Gemini, Lovable, Replit, Cursor) work **on** these
+> projects; they do not **own** them. Start at `vault/README.md`.
+
 ## Structure
 
 ```
-├── index.html        Home — earn the click (3D hero, 4D tesseract, live effects)
-├── holdings.html     The Ventures — Dynasty map, five ventures, legal spine
-├── tech.html         The Craft — capabilities, receipts, bite-sized AI bots
-├── about.html        The Founder — problem, receipts, payoff
-├── contact.html      Private Access — one number, zero gatekeepers
+├── vault/            ← THE SOURCE OF TRUTH (projects, knowledge, assets)
+│   ├── PROJECTS/         One folder per venture — project.md is the front door
+│   ├── KNOWLEDGE/        decisions · research · specs · prompts · roadmaps
+│   └── ASSETS/           logos · pdfs · contracts · images · code
+├── AGENTS.md         The contract every AI tool inherits
+├── CLAUDE.md         Pointer to AGENTS.md (Claude auto-reads this)
+├── site/templates/   The five pages as templates (facts injected from the spec)
+├── tools/            build_specs.py (markdown) · build_site.py (HTML)
+├── index.html        Home — generated from site/templates/ (3D hero, live effects)
+├── holdings.html     The Ventures — generated (Dynasty map, five ventures)
+├── tech.html         The Craft — generated (capabilities, receipts, bots)
+├── about.html        The Founder — generated (problem, receipts, payoff)
+├── contact.html      Private Access — generated (one number, zero gatekeepers)
 ├── assets/           Favicons, OG image, source photography
-└── mcp/              Zero-dependency MCP server (the house knowledge base)
+└── mcp/              Zero-dependency MCP server (loads canonical.json)
 ```
+
+> The HTML pages and the MCP server are **projections** of
+> `vault/KNOWLEDGE/specs/canonical.json`. If they disagree with the JSON, the
+> JSON wins — regenerate with `python3 tools/build_specs.py && python3 tools/build_site.py`.
 
 ## The site
 
@@ -58,7 +75,8 @@ python3 mcp/server.py        # stdio JSON-RPC — see mcp/README.md to register
 ## Privacy
 
 The public pages and the MCP knowledge base intentionally exclude the
-street address, birthday/birth time, home city, and school names.
+street address, birthday/birth time, and home city. School names are also
+excluded — **except** the one in the public GED record (McDonough High School).
 Keep it that way in future edits.
 
 ---
