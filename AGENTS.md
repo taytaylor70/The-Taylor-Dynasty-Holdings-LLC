@@ -40,7 +40,8 @@ substitute your judgment for his, invent facts, or sand down his voice.
 - Invent facts about the founder, the ventures, money, or legal status.
 - Delete or rename files without logging the decision first.
 - Put secrets, addresses, birthdays, birth times, home cities, or school names
-  anywhere in this repo.
+  anywhere in this repo — except the school name in the public GED record
+  (McDonough High School), which is the only school name allowed.
 - Write "as the AI" or claim ownership of a project in any copy.
 - Hardcode canonical facts into `*.html` or `mcp/server.py` — a canonical fact
   lives in `vault/KNOWLEDGE/specs/canonical.json`; the HTML and server are
@@ -54,8 +55,9 @@ substitute your judgment for his, invent facts, or sand down his voice.
 ## Privacy (non-negotiable)
 
 This repo is public-safe. Excluded: street address, birthday/birth time, home
-city, school names. If a fact isn't safe for the public website, it doesn't
-belong in this repo — keep it out entirely, or keep it outside Git.
+city, and school names — **except** the school name in the public GED record
+(McDonough High School). If a fact isn't safe for the public website, it
+doesn't belong in this repo — keep it out entirely, or keep it outside Git.
 
 ## Commit convention
 

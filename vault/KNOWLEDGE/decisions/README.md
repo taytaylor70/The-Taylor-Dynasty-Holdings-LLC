@@ -13,3 +13,4 @@ Use `../../templates/decision.md`. Number sequentially (`0001`, `0002`, …).
 | 0002 | Public-safe knowledge only | accepted |
 | 0003 | Canonical facts live in one JSON file | accepted |
 | 0004 | The website is generated from canonical.json | accepted |
+| 0005 | Allow the public GED school name as the sole school-name exception | accepted |

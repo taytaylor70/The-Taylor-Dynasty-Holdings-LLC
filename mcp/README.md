@@ -73,8 +73,9 @@ export TAYLOR_DYNASTY_CANONICAL=/absolute/path/to/canonical.json
 ## Privacy rules (enforced in the data, not just the docs)
 
 The knowledge base mirrors the public site exactly — it contains **no** street
-address, birthday or birth time, home city, or school names. If a fact isn't
-safe for the website, it isn't in `canonical.json`.
+address, birthday or birth time, home city, or school names (beyond the public
+GED record, McDonough High School). If a fact isn't safe for the website, it
+isn't in `canonical.json`.
 
 ## Extending it
 

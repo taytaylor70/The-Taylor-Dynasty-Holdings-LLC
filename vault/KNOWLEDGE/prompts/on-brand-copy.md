@@ -28,7 +28,8 @@ House rules:
   (a phone number or a direct next step).
 - Explanations ship with the work — plain English, always.
 - No secrets: never invent a street address, birthday, home city, or school
-  name. Public-safe facts only.
+  name. Public-safe facts only. (The one permitted school name is the public
+  GED record: McDonough High School.)
 
 Tagline: "Building Legacy. Creating Value. Engineering the Future."
 ```

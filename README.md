@@ -75,7 +75,8 @@ python3 mcp/server.py        # stdio JSON-RPC — see mcp/README.md to register
 ## Privacy
 
 The public pages and the MCP knowledge base intentionally exclude the
-street address, birthday/birth time, home city, and school names.
+street address, birthday/birth time, and home city. School names are also
+excluded — **except** the one in the public GED record (McDonough High School).
 Keep it that way in future edits.
 
 ---

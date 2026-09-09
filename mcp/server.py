@@ -25,7 +25,8 @@ vault/KNOWLEDGE/specs/ are generated from that JSON by tools/build_specs.py.
 
 Privacy rules baked into the data (mirrors the website):
   · No street address  · no birthday / birth time  · no home city
-  · No school names    · public-safe bio only
+  · No school names beyond the public GED record (McDonough High School)
+  · Public-safe bio only
 """
 import json
 import os

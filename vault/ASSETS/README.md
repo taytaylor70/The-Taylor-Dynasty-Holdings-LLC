@@ -16,7 +16,7 @@ and *projects* (what we're building).
 1. **Contracts and legal docs are private.** Do not commit them to a public
    repo. Keep them in a private store and reference them by name here.
 2. **No secrets.** No keys, tokens, addresses, birthdays, home cities, or
-   school names — anywhere in this repo.
+   school names (beyond the public GED record) — anywhere in this repo.
 
 ## Note on contracts
 
