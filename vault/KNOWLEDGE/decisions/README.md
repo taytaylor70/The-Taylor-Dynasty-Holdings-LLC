@@ -14,3 +14,5 @@ Use `../../templates/decision.md`. Number sequentially (`0001`, `0002`, …).
 | 0003 | Canonical facts live in one JSON file | accepted |
 | 0004 | The website is generated from canonical.json | accepted |
 | 0005 | Allow the public GED school name as the sole school-name exception | accepted |
+| 0006 | Document MCP onboarding for Claude Desktop, Claude Code, and Cursor | accepted |
+| 0007 | Remove the vendored repo zip from the repository | accepted |
