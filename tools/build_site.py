@@ -12,6 +12,7 @@ at the repo root. The templates carry the design and bespoke copy; the facts
 
     python3 tools/build_site.py              # regenerate all five pages
     python3 tools/build_site.py --extract    # re-tokenize the live HTML -> templates
+                                             # (strips the generated banner first)
 
 Zero dependencies (Python 3.9+). Idempotent — safe to run any time.
 
@@ -88,7 +89,8 @@ EXTRACT_PAIRS = [
     ("Luther A. Taylor III", "{{FOUNDER_FULL_NAME}}"),
     ("L. Taylor III", "{{FOUNDER_NAME}}"),
     ("Office Administration Certification (2013)", "{{EDU0}}"),
-    ("GED — Maurice J. McDonough High School, Maryland (2008)", "{{EDU1}}"),
+    # The public GED record uses the abbreviated school name only (decision 0005);
+    # never re-introduce the expanded form here, even as a legacy match.
     ("GED — McDonough High School, Maryland (2008)", "{{EDU1}}"),
     # venture names (plain, unambiguous)
     ("The Taylor Dynasty Holdings LLC", "{{V0_NAME}}"),
@@ -105,6 +107,15 @@ EXTRACT_PAIRS = [
     (">Legacy<", ">{{V4_SECTOR}}<"),
     (">AI · Software<", ">{{V5_SECTOR}}<"),
 ]
+
+
+def _strip_banner(html):
+    """Remove a previously injected generated-file banner.
+
+    Round-trip safety: the live pages carry the banner, the templates must
+    not — so `--extract` strips it before writing.
+    """
+    return html.replace(BANNER + "\n", "", 1)
 
 
 def extract(template):
@@ -128,7 +139,9 @@ def main():
             src = ROOT / page
             out = TPL_DIR / page
             out.parent.mkdir(parents=True, exist_ok=True)
-            out.write_text(extract(src.read_text(encoding="utf-8")), encoding="utf-8")
+            out.write_text(
+                extract(_strip_banner(src.read_text(encoding="utf-8"))),
+                encoding="utf-8")
             print("template ->", out.relative_to(ROOT))
         print("\nTemplates extracted. Now run `python3 tools/build_site.py` to regenerate.")
         return

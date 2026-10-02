@@ -5,6 +5,9 @@ desktop.ini
 .netlify
 .vercel
 
+# Repo export snapshots — never vendor archives (decision 0007).
+*.zip
+
 # Contracts / legal docs are PRIVATE — never commit them here.
 vault/ASSETS/contracts/*
 !vault/ASSETS/contracts/.gitkeep

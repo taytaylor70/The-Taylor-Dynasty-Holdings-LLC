@@ -69,8 +69,11 @@ covering ventures, founder bio, tech capabilities, career timeline, brand
 guidelines, and contact protocol. Python 3.9+, zero dependencies:
 
 ```bash
-python3 mcp/server.py        # stdio JSON-RPC — see mcp/README.md to register
+python3 mcp/server.py        # stdio JSON-RPC
 ```
+
+Step-by-step onboarding — Claude Desktop, Claude Code, and Cursor — plus a
+connection check and troubleshooting table live in `mcp/README.md`.
 
 ## Privacy
 
