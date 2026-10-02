@@ -31,8 +31,10 @@ over stdio (the standard MCP transport).
 
 ## Quick test (no client needed)
 
+From the repo root:
+
 ```bash
-cd taylor-dynasty/mcp
+cd mcp
 printf '%s\n' \
   '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{}}' \
   '{"jsonrpc":"2.0","id":2,"method":"tools/list"}' \
@@ -40,9 +42,48 @@ printf '%s\n' \
   | python3 server.py
 ```
 
-## Register with Claude Desktop
+You should see three JSON lines come back — `serverInfo`, a list of 10 tools,
+and the house overview. Do this **before** configuring any client: it proves
+Python and the Vault JSON are working, so any later failure is a client-config
+problem, not a server problem.
 
-Add to `claude_desktop_config.json` (Settings → Developer → Edit Config):
+---
+
+## Before you start (30 seconds)
+
+1. **Python 3.9+**
+   ```bash
+   python3 --version        # Windows: python --version
+   ```
+2. **The absolute path to `server.py`.** Clients do **not** expand `~`, `.`,
+   or environment variables in `args` — give them the full path:
+   ```bash
+   pwd                      # from the repo root, e.g. /Users/taytay/taylor-dynasty
+   # the path you need: /Users/taytay/taylor-dynasty/mcp/server.py
+   ```
+3. **Smoke-test the server** with the quick test above.
+
+Throughout the rest of this file, replace `/absolute/path/to/taylor-dynasty`
+with that real path.
+
+---
+
+## Onboarding
+
+### 1. Claude Desktop
+
+**Where the config lives** (create the file if it doesn't exist yet):
+
+| OS | Path |
+|---|---|
+| macOS | `~/Library/Application Support/Claude/claude_desktop_config.json` |
+| Windows | `%APPDATA%\Claude\claude_desktop_config.json` |
+| Linux | `~/.config/Claude/claude_desktop_config.json` |
+
+The easiest route: **Settings → Developer → Edit Config** opens the file
+directly.
+
+Add the server:
 
 ```json
 {
@@ -55,11 +96,99 @@ Add to `claude_desktop_config.json` (Settings → Developer → Edit Config):
 }
 ```
 
-## Register with Claude Code
+- If the file already has an `mcpServers` block, add the `"taylor-dynasty"`
+  entry **inside** it — don't replace the file.
+- **Restart Claude Desktop completely.** Closing the window is not enough:
+  macOS → right-click the dock icon → Quit; Windows → right-click the tray
+  icon → Exit. Reopen the app.
+- **Verify:** the tools (hammer) icon appears in the composer — ask
+  *"call dynasty_overview"*. MCP logs live under **Settings → Developer**.
+
+### 2. Claude Code
+
+One command, run from anywhere:
 
 ```bash
-claude mcp add taylor-dynasty python3 /absolute/path/to/taylor-dynasty/mcp/server.py
+claude mcp add --scope user taylor-dynasty -- python3 /absolute/path/to/taylor-dynasty/mcp/server.py
 ```
+
+- `--scope user` makes the server available in every project. Without it the
+  default is **local** — it works only in the folder you ran the command from
+  and looks "missing" everywhere else. `--scope project` writes a shareable
+  `.mcp.json` into that project instead.
+- Everything after `--` is the server command — keep the two dashes.
+- **Verify:** `claude mcp list` (expect *Connected*), or `/mcp` inside a
+  session.
+- Remove with `claude mcp remove taylor-dynasty`.
+
+### 3. Cursor
+
+**Where the config lives** — a project file overrides the global one:
+
+| Scope | Path |
+|---|---|
+| Global (all projects) | `~/.cursor/mcp.json` |
+| Project (just this repo) | `.cursor/mcp.json` |
+
+The easiest route: **Settings → Tools & MCP → New MCP Server**, which opens
+the config file for you.
+
+```json
+{
+  "mcpServers": {
+    "taylor-dynasty": {
+      "command": "python3",
+      "args": ["/absolute/path/to/taylor-dynasty/mcp/server.py"]
+    }
+  }
+}
+```
+
+- The `mcpServers` root key is required — without it, Cursor silently ignores
+  the file.
+- Project config is machine-specific (it hardcodes one absolute path); prefer
+  the **global** file so every workspace gets the server.
+- **Reload:** **Settings → Tools & MCP** (or restart Cursor). Confirm the
+  server shows as connected, then ask the Agent *"list the taylor-dynasty
+  tools"*.
+
+### 4. Any other MCP client (generic)
+
+Every stdio client needs the same two pieces:
+
+```
+command:  python3                        (Windows: python)
+args:     ["/absolute/path/to/taylor-dynasty/mcp/server.py"]
+```
+
+No API key, no port, no network — the server only reads the Vault JSON.
+
+---
+
+## Verify it's connected (once per client)
+
+Ask the assistant to run:
+
+> Call `dynasty_overview`, then `ventures_list`.
+
+Expected: the parent ecosystem, the five ventures, and the standard quote —
+then a `ventures_list` with **6 entries** (parent + five ventures). If you get
+that, every tool above works. If not, see Troubleshooting.
+
+---
+
+## Troubleshooting
+
+| Symptom | Likely cause / fix |
+|---|---|
+| Server listed, but no tools appear | `args` uses a relative path or `~`. Use the **absolute** path. |
+| `command not found: python3` (Windows) | Use `"command": "python"`, or the full path from `where python`. |
+| `Canonical spec not found: …` | The server resolves `canonical.json` relative to its own file. Keep `server.py` inside the repo, or set `TAYLOR_DYNASTY_CANONICAL` (below). |
+| Client ignores the config entirely | Validate the JSON — configs fail silently on a stray comma: `python3 -m json.tool <config file>` |
+| Tools appear, but answers are stale | The server reads `canonical.json` **at startup**. Restart the client after editing the Vault. |
+| Claude Desktop doesn't see it | Quit completely (dock/tray → Quit) and reopen. Check **Settings → Developer** logs. |
+
+---
 
 ## Where the data lives
 
